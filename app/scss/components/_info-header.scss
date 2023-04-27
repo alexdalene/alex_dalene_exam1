@@ -1,0 +1,105 @@
+@use "../abstracts/" as a;
+
+.container-header {
+    margin-right: a.$md-sys-margin-default;
+    background-color: a.$md-sys-color-secondary-dark;
+    border-radius: 0 2rem 2rem 0;
+    padding: 4.4rem;
+    display: flex;
+    align-items: center;
+
+    @include a.respond-to('small') {
+        margin-right: a.$md-sys-margin-small;
+    }
+
+    @include a.respond-to('medium') {
+        margin-right: a.$md-sys-margin-medium;
+    }
+
+    @include a.respond-to('large') {
+        margin-right: a.$md-sys-margin-large;
+    }
+
+    @include a.respond-to('x-large') {
+        margin-right: a.$md-sys-margin-x-large;
+    }
+
+    .info-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2.4rem;
+        color: a.$md-sys-color-on-secondary-dark;
+        width: 27rem;
+
+        @include a.respond-to('small') {
+            width: 35rem;
+        }
+
+        @include a.respond-to('medium') {
+            width: 50rem;
+        }
+    
+        .title-header {
+            font-family: a.$md-sys-font-quicksand;
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.15;
+
+            @include a.respond-to('small') {
+                font-size: 64px;
+                line-height: 1;
+            }
+
+            @include a.respond-to('medium') {
+                font-size: 96px;
+                line-height: 1;
+            }
+        }
+    
+        .vertical-line {
+            border: none;
+            border-left: 1px solid a.$md-sys-color-on-secondary-dark;
+            height: 16rem;
+
+            @include a.respond-to('small') {
+                height: 18rem;
+            }
+
+            @include a.respond-to('medium') {
+                height: 27rem;
+                border-width: 2px;
+            }
+        }
+    
+        .info-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 16rem;
+
+            @include a.respond-to('small') {
+                height: 18rem;
+            }
+
+            @include a.respond-to('medium') {
+                height: 27rem;
+            }
+    
+            .paragraph-header {
+                font-size: 16px;
+                line-height: 1.15;
+                align-self: flex-start;
+
+                @include a.respond-to('small') {
+                    font-size: 20px;
+                }
+
+                @include a.respond-to('medium') {
+                    font-size: 32px;
+                }
+            }
+        }
+    
+    }
+}

@@ -30,36 +30,16 @@ $md-sys-color-surface-tint-dark: #e8c41c;
 $md-sys-color-outline-variant-dark: #4b4639;
 $md-sys-color-scrim-dark: #000000;
 
-// breakpoints
-$breakpoints: (
-    'small': (min-width: 600px),
-    'medium': (min-width: 905px),
-    'large': (min-width: 1240px),
-    'x-large': (min-width: 1440px),
-);
-
-// breakpoint manager
-@mixin respond-to($breakpoint) {
-    $raw-query: map-get($breakpoints, $breakpoint);
-  
-    @if $raw-query {
-      $query: if(
-        type-of($raw-query) == 'string',
-        unquote($raw-query),
-        inspect($raw-query)
-      );
-  
-      @media #{$query} {
-        @content;
-      }
-    } @else {
-      @error 'No value found for `#{$breakpoint}`. '
-           + 'Please make sure it is defined in `$breakpoints` map.';
-    }
-  }
-
   // margins
   $md-sys-margin-default: 1.6rem;
+  $md-sys-margin-small: 3.6rem;
+  $md-sys-margin-medium: 5rem;
+  $md-sys-margin-large: 20rem;
+  $md-sys-margin-x-large: 30rem;
 
   // border-radius
   $md-sys-radius-defalt: 3rem;
+
+  // box shadow
+  $md-sys-shadow-0: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  $md-sys-shadow-1: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
