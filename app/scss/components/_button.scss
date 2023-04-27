@@ -10,3 +10,15 @@
     text-align: center;
     max-width: 13rem;
 }
+
+.button-outline {
+    padding: 1.2rem 1.6rem;
+    background-color: transparent;
+    border: 1px solid a.$md-sys-color-outline-dark;
+    color: a.$md-sys-color-on-background-dark;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 99rem;
+    text-align: center;
+    max-width: 13rem;
+}

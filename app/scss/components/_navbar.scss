@@ -6,6 +6,7 @@
     padding: a.$md-sys-margin-default;
     position: sticky;
     top: 0;
+    z-index: 1000;
 
 
     .navbar {
@@ -36,6 +37,7 @@
             padding: 0;
             z-index: 98;
             background-color: a.$md-sys-color-background-dark;
+            animation: navbar-open 400ms ease-out;
             
             a {
                 color: a.$md-sys-color-on-background-dark;
@@ -43,6 +45,8 @@
                 font-family: a.$md-sys-font-quicksand;
                 font-weight: 400;
                 font-size: 3.6rem;
+                opacity: 1;
+                animation: fade-in 400ms ease-in;
             }
         }
 

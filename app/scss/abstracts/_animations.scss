@@ -1,0 +1,17 @@
+@keyframes navbar-open {
+    from {
+        height: 0lvh;
+    }
+    to {
+        height: 100lvh;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

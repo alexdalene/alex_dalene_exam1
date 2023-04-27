@@ -1,0 +1,76 @@
+@use "../abstracts/" as a;
+
+.carousel-main-container {
+    .nav-carousel {
+        display: flex;
+        justify-content: space-between;
+        margin: a.$md-sys-margin-default;
+        align-items: center;
+
+        @include a.respond-to('small') {
+            margin-left: a.$md-sys-margin-small;
+        }
+    
+        @include a.respond-to('medium') {
+            margin-left: a.$md-sys-margin-medium;
+        }
+    
+        @include a.respond-to('large') {
+            margin-left: a.$md-sys-margin-large;
+        }
+    
+        @include a.respond-to('x-large') {
+            margin-left: a.$md-sys-margin-x-large;
+        }
+
+        .title-carousel {
+            font-size: 20px;
+            font-family: a.$md-sys-font-quicksand;
+            font-weight: 700;
+        }
+    }
+
+    .carousel-wrapper {
+        margin: 1rem;
+        margin-left: a.$md-sys-margin-default;
+        margin-right: 0;
+        position: relative;
+        overflow: hidden;
+
+        @include a.respond-to('small') {
+            margin-left: a.$md-sys-margin-small;
+        }
+    
+        @include a.respond-to('medium') {
+            margin-left: a.$md-sys-margin-medium;
+        }
+    
+        @include a.respond-to('large') {
+            margin-left: a.$md-sys-margin-large;
+        }
+    
+        @include a.respond-to('x-large') {
+            margin-left: a.$md-sys-margin-x-large;
+        }
+
+        .carousel-container {
+            height: calc(45rem - 2rem);
+            width: 100%;
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: scroll;
+            scroll-behavior: smooth;
+            gap: 1.6rem;
+
+            .carousel {
+                max-width: 30rem;
+                height: 100%;
+                flex: 1 0 100%;
+                border-radius: a.$md-sys-radius-defalt;
+                background-color: a.$md-sys-color-tertiary-container-dark;
+            }
+        }
+    }
+}
