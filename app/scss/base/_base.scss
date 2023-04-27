@@ -1,0 +1,16 @@
+@use "../abstracts/" as a;
+
+html {
+    // set default background color
+    background-color: a.$md-sys-color-background-dark;
+
+    // set scroll behaviour
+    scroll-behavior: smooth;
+
+    // set font size so that 1 rem = 10 px
+    font-size: 62.5%;
+
+    // set default font and color that gets used the most
+    font-family: a.$md-sys-font-rubik;
+    color: a.$md-sys-color-on-background-dark;
+}

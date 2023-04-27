@@ -1,0 +1,65 @@
+// colors
+$md-sys-color-primary-dark: #e8c41c;
+$md-sys-color-on-primary-dark: #3a3000;
+$md-sys-color-primary-container-dark: #544600;
+$md-sys-color-on-primary-container-dark: #ffe16f;
+$md-sys-color-secondary-dark: #d2c6a1;
+$md-sys-color-on-secondary-dark: #373016;
+$md-sys-color-secondary-container-dark: #4e462a;
+$md-sys-color-on-secondary-container-dark: #efe2bc;
+$md-sys-color-tertiary-dark: #aad0b2;
+$md-sys-color-on-tertiary-dark: #163722;
+$md-sys-color-tertiary-container-dark: #2d4e37;
+$md-sys-color-on-tertiary-container-dark: #c6eccd;
+$md-sys-color-error-dark: #ffb4ab;
+$md-sys-color-error-container-dark: #93000a;
+$md-sys-color-on-error-dark: #690005;
+$md-sys-color-on-error-container-dark: #ffdad6;
+$md-sys-color-background-dark: #1d1b16;
+$md-sys-color-on-background-dark: #e8e2d9;
+$md-sys-color-surface-dark: #1d1b16;
+$md-sys-color-on-surface-dark: #e8e2d9;
+$md-sys-color-surface-variant-dark: #4b4639;
+$md-sys-color-on-surface-variant-dark: #cdc6b4;
+$md-sys-color-outline-dark: #979080;
+$md-sys-color-inverse-on-surface-dark: #1d1b16;
+$md-sys-color-inverse-surface-dark: #e8e2d9;
+$md-sys-color-inverse-primary-dark: #705d00;
+$md-sys-color-shadow-dark: #000000;
+$md-sys-color-surface-tint-dark: #e8c41c;
+$md-sys-color-outline-variant-dark: #4b4639;
+$md-sys-color-scrim-dark: #000000;
+
+// breakpoints
+$breakpoints: (
+    'small': (min-width: 600px),
+    'medium': (min-width: 905px),
+    'large': (min-width: 1240px),
+    'x-large': (min-width: 1440px),
+);
+
+// breakpoint manager
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+  
+    @if $raw-query {
+      $query: if(
+        type-of($raw-query) == 'string',
+        unquote($raw-query),
+        inspect($raw-query)
+      );
+  
+      @media #{$query} {
+        @content;
+      }
+    } @else {
+      @error 'No value found for `#{$breakpoint}`. '
+           + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+  }
+
+  // margins
+  $md-sys-margin-default: 1.6rem;
+
+  // border-radius
+  $md-sys-radius-defalt: 3rem;

@@ -1,0 +1,53 @@
+@use "../abstracts/" as a;
+
+.navbar-container {
+    display: flex;
+    background-color: a.$md-sys-color-background-dark;
+    padding: a.$md-sys-margin-default;
+    position: sticky;
+    top: 0;
+
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        #navbar-menu {
+            z-index: 99;
+        }
+
+        #navbar-logo {
+            z-index: 99;
+        }
+
+        .navbar-links {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100lvh;
+            margin: 0;
+            padding: 0;
+            z-index: 98;
+            background-color: a.$md-sys-color-background-dark;
+            
+            a {
+                color: a.$md-sys-color-on-background-dark;
+                text-decoration: none;
+                font-family: a.$md-sys-font-quicksand;
+                font-weight: 400;
+                font-size: 3.6rem;
+            }
+        }
+
+        .shown {
+            display: flex;
+        }
+    }
+}

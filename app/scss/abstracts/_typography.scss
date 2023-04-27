@@ -1,0 +1,15 @@
+// import local fonts
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/public/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Rubik';
+    src: url('/public/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+}
+
+// fonts
+$md-sys-font-quicksand: "Quicksand";
+$md-sys-font-rubik: "Rubik";
+
+// sizes
