@@ -7,9 +7,14 @@
     padding: 4.4rem;
     display: flex;
     align-items: center;
+    overflow: hidden;
 
     @include a.respond-to('small') {
         margin-right: a.$md-sys-margin-small;
+        background-image: url(/public/svg/background-tree.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
     }
 
     @include a.respond-to('medium') {
