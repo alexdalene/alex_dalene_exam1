@@ -12,10 +12,21 @@
     .navbar {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
 
         #navbar-menu {
             z-index: 99;
+        }
+
+        .rotate {
+            transform: rotate(-90deg);
+            transition: 200ms ease-out;
+
+            svg > path {
+                transition: 200ms ease;
+                fill: a.$md-sys-color-primary-dark;
+            }
         }
 
         #navbar-logo {
@@ -37,7 +48,7 @@
             padding: 0;
             z-index: 98;
             background-color: a.$md-sys-color-background-dark;
-            animation: navbar-open 400ms ease-out;
+            animation: navbar-open 200ms ease-out;
             
             a {
                 color: a.$md-sys-color-on-background-dark;
@@ -46,7 +57,7 @@
                 font-weight: 400;
                 font-size: 3.6rem;
                 opacity: 1;
-                animation: fade-in 400ms ease-in;
+                animation: fade-in 300ms ease-in;
             }
         }
 
