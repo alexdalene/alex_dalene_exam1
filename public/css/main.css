@@ -532,4 +532,29 @@ html {
   }
 }
 
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.footer-wrapper .footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+.footer-wrapper .footer-container .footer-logo {
+  transform: scale(1.5);
+}
+.footer-wrapper .footer-container .footer-title {
+  font-size: 32px;
+  font-family: "Quicksand";
+  font-weight: 400;
+}
+.footer-wrapper .footer-container .footer-paragraph {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: -1.6rem;
+}
+
 /*# sourceMappingURL=main.css.map */
