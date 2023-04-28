@@ -111,6 +111,7 @@ html {
   font-size: 16px;
   border-radius: 99rem;
   text-align: center;
+  width: 100%;
   max-width: 13rem;
   font-weight: 400;
 }
@@ -130,8 +131,7 @@ html {
 .button-mission {
   background-color: #FFE170;
   color: #221B00;
-  min-width: 27rem;
-  max-width: 27rem;
+  min-width: 100%;
   font-weight: 400;
   align-self: center;
   font-size: 16px;
@@ -267,7 +267,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  padding: 2.4rem;
+  padding: 3.6rem;
 }
 .mission-wrapper .mission-container .mission-title {
   font-size: 48px;
@@ -280,16 +280,19 @@ html {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.25;
+  max-width: 25rem;
 }
 .mission-wrapper .mission-container:nth-child(1) {
   background-color: #d2c6a1;
   border-radius: 2rem 2rem 0 0;
   color: #373016;
+  width: 100%;
 }
 .mission-wrapper .mission-container:nth-child(2) {
   background-color: #4e462a;
   border-radius: 0 0 2rem 2rem;
   color: #efe2bc;
+  width: 100%;
 }
 
 .search-header {
