@@ -1,0 +1,41 @@
+@use "../abstracts/" as a;
+
+.mission-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: a.$md-sys-margin-default;
+
+    .mission-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        .mission-title {
+            font-size: 48px;
+            font-family: a.$md-sys-font-quicksand;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 0.8rem;
+        }
+
+        .mission-paragraph {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.25;
+        }
+
+        &:nth-child(1) {
+            background-color: a.$md-sys-color-secondary-dark;
+            padding: 3.6rem;
+            border-radius: 2rem 2rem 0 0;
+            color: a.$md-sys-color-on-secondary-dark;
+        }
+
+        &:nth-child(2) {
+            background-color: a.$md-sys-color-secondary-container-dark;
+            padding: 3.6rem;
+            border-radius: 0 0 2rem 2rem;
+            color: a.$md-sys-color-on-secondary-container-dark;
+        }
+    }
+}

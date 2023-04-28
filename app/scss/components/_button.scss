@@ -9,6 +9,7 @@
     border-radius: 99rem;
     text-align: center;
     max-width: 13rem;
+    font-weight: 400;
 }
 
 .button-outline {
@@ -21,4 +22,15 @@
     border-radius: 99rem;
     text-align: center;
     max-width: 13rem;
+}
+
+.button-mission {
+    background-color: a.$md-sys-color-primary-fixed;
+    color: a.$md-sys-color-on-primary-fixed;
+    min-width: 27rem;
+    max-width: 27rem;
+    font-weight: 400;
+    align-self: center;
+    font-size: 16px;
+    margin-top: 1.6rem;
 }
