@@ -23,14 +23,22 @@
     border-radius: 99rem;
     text-align: center;
     max-width: 13rem;
+
+    @include a.respond-to('medium') {
+        font-size: 24px;
+    }
 }
 
 .button-mission {
     background-color: a.$md-sys-color-primary-fixed;
     color: a.$md-sys-color-on-primary-fixed;
-    min-width: 100%;
+    min-width: clamp(20rem, 100%, 40rem);
     font-weight: 400;
     align-self: center;
     font-size: 16px;
     margin-top: 1.6rem;
+
+    @include a.respond-to('medium') {
+        align-self: flex-start;
+    }
 }

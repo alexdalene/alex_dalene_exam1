@@ -1,0 +1,77 @@
+@use "../abstracts/" as a;
+
+.mission-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-inline: a.$md-sys-margin-default;
+
+    @include a.respond-to('small') {
+        margin-inline: a.$md-sys-margin-small;
+    }
+
+    @include a.respond-to('medium') {
+        margin-inline: a.$md-sys-margin-medium;
+        flex-direction: row;
+    }
+
+    @include a.respond-to('large') {
+        margin-inline: a.$md-sys-margin-large;
+    }
+
+    @include a.respond-to('x-large') {
+        margin-inline: a.$md-sys-margin-x-large;
+    }
+
+    .mission-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        padding: 3.6rem;
+
+        .mission-title {
+            font-size: 48px;
+            font-family: a.$md-sys-font-quicksand;
+            font-weight: 400;
+            line-height: 1;
+            padding-bottom: 0.8rem;
+            width: 100%;
+
+            @include a.respond-to('small') {
+                font-size: 64px;
+                line-height: 1;
+            }
+        }
+
+        .mission-paragraph {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.25;
+
+            @include a.respond-to('small') {
+                font-size: 22px;
+            }
+        }
+
+        &:nth-child(1) {
+            background-color: a.$md-sys-color-secondary-dark;
+            border-radius: 2rem 2rem 0 0;
+            color: a.$md-sys-color-on-secondary-dark;
+            width: 100%;
+
+            @include a.respond-to('medium') {
+                border-radius: 2rem 0 0 2rem;
+            }
+        }
+
+        &:nth-child(2) {
+            background-color: a.$md-sys-color-secondary-container-dark;
+            border-radius: 0 0 2rem 2rem;
+            color: a.$md-sys-color-on-secondary-container-dark;
+            width: 100%;
+
+            @include a.respond-to('medium') {
+                border-radius: 0 2rem 2rem 0;
+            }
+        }
+    }
+}

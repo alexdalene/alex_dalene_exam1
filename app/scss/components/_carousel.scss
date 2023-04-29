@@ -8,25 +8,29 @@
         align-items: center;
 
         @include a.respond-to('small') {
-            margin-left: a.$md-sys-margin-small;
+            margin-inline: a.$md-sys-margin-small;
         }
     
         @include a.respond-to('medium') {
-            margin-left: a.$md-sys-margin-medium;
+            margin-inline: a.$md-sys-margin-medium;
         }
     
         @include a.respond-to('large') {
-            margin-left: a.$md-sys-margin-large;
+            margin-inline: a.$md-sys-margin-large;
         }
     
         @include a.respond-to('x-large') {
-            margin-left: a.$md-sys-margin-x-large;
+            margin-inline: a.$md-sys-margin-x-large;
         }
 
         .title-carousel {
             font-size: 20px;
             font-family: a.$md-sys-font-quicksand;
             font-weight: 700;
+
+            @include a.respond-to('medium') {
+                font-size: 32px;
+            }
         }
     }
 

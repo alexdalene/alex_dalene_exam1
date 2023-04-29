@@ -4,13 +4,14 @@
     margin-right: a.$md-sys-margin-default;
     background-color: a.$md-sys-color-secondary-dark;
     border-radius: 0 2rem 2rem 0;
-    padding: 3.6rem;
+    padding: a.$md-sys-padding-large;
     display: flex;
     align-items: center;
     overflow: hidden;
 
     @include a.respond-to('small') {
         margin-right: a.$md-sys-margin-small;
+        padding-left: a.$md-sys-margin-small;
         background-image: url(/public/svg/background-tree.svg);
         background-size: contain;
         background-repeat: no-repeat;
@@ -19,14 +20,17 @@
 
     @include a.respond-to('medium') {
         margin-right: a.$md-sys-margin-medium;
+        padding-left: a.$md-sys-margin-medium;
     }
 
     @include a.respond-to('large') {
         margin-right: a.$md-sys-margin-large;
+        padding-left: a.$md-sys-margin-large;
     }
 
     @include a.respond-to('x-large') {
         margin-right: a.$md-sys-margin-x-large;
+        padding-left: a.$md-sys-margin-x-large;
     }
 
     .info-header {
@@ -35,14 +39,14 @@
         align-items: center;
         gap: 2.4rem;
         color: a.$md-sys-color-on-secondary-dark;
-        width: 27rem;
+        max-width: 30rem;
 
         @include a.respond-to('small') {
-            width: 35rem;
+            max-width: 35rem;
         }
 
         @include a.respond-to('medium') {
-            width: 50rem;
+            max-width: 50rem;
         }
     
         .title-header {
@@ -50,57 +54,35 @@
             font-size: 48px;
             font-weight: 400;
             line-height: 1.15;
+            border-right: 1px solid a.$md-sys-color-on-secondary-dark;
+            padding-right: 2.4rem;
+            width: 100%;
 
             @include a.respond-to('small') {
                 font-size: 64px;
                 line-height: 1;
             }
 
-            @include a.respond-to('medium') {
+            @include a.respond-to('large') {
                 font-size: 96px;
-                line-height: 1;
-            }
-        }
-    
-        .vertical-line {
-            border: none;
-            border-left: 1px solid a.$md-sys-color-on-secondary-dark;
-            height: 17rem;
-
-            @include a.respond-to('small') {
-                height: 18rem;
-            }
-
-            @include a.respond-to('medium') {
-                height: 27rem;
-                border-width: 2px;
             }
         }
     
         .info-right {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            height: 17rem;
-
-            @include a.respond-to('small') {
-                height: 18rem;
-            }
-
-            @include a.respond-to('medium') {
-                height: 27rem;
-            }
+            gap: 2.4rem;
     
             .paragraph-header {
-                font-size: 16px;
+                font-size: 20px;
                 line-height: 1.15;
                 align-self: flex-start;
 
                 @include a.respond-to('small') {
-                    font-size: 20px;
+                    font-size: 22px;
                 }
 
-                @include a.respond-to('medium') {
+                @include a.respond-to('large') {
                     font-size: 32px;
                 }
             }

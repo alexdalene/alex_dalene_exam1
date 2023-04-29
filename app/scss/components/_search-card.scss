@@ -34,7 +34,7 @@
     input {
         border: none;
         outline: none;
-        border-radius: 2rem;
+        border-radius: 1.5rem;
         height: 4.5rem;
         width: 20rem;
         background-color: a.$md-sys-color-on-background-dark;
@@ -56,6 +56,16 @@
 
         &:focus::placeholder {
             color: transparent;
+        }
+
+        @include a.respond-to('medium') {
+            width: 30rem;
+            height: 5rem;
+            font-size: 20px;
+
+            &::placeholder {
+                font-size: 20px;
+            }
         }
     }
 }

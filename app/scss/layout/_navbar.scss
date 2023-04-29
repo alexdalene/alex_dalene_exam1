@@ -21,10 +21,10 @@
 
         .rotate {
             transform: rotate(-90deg);
-            transition: 200ms ease-out;
+            transition: 400ms ease-out;
 
             svg > path {
-                transition: 200ms ease;
+                transition: 400ms ease;
                 fill: a.$md-sys-color-primary-dark;
             }
         }
@@ -43,12 +43,16 @@
             left: 0;
             top: 0;
             width: 100%;
-            height: 100lvh;
             margin: 0;
             padding: 0;
             z-index: 98;
             background-color: a.$md-sys-color-background-dark;
-            animation: navbar-open 200ms ease-out;
+            
+            &[isopen=true] {
+                display: flex;
+                animation: navbar-open 400ms ease-out;
+                height: 100lvh;
+            }
             
             a {
                 color: a.$md-sys-color-on-background-dark;
@@ -57,12 +61,8 @@
                 font-weight: 400;
                 font-size: 3.6rem;
                 opacity: 1;
-                animation: fade-in 300ms ease-in;
+                animation: fade-in 400ms ease-in;
             }
-        }
-
-        .shown {
-            display: flex;
         }
     }
 }
