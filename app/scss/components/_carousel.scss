@@ -35,7 +35,6 @@
     }
 
     .carousel-wrapper {
-        margin: 1rem;
         margin-left: a.$md-sys-margin-default;
         margin-right: 0;
         position: relative;
@@ -58,7 +57,7 @@
         }
 
         .carousel-container {
-            height: calc(45rem - 2rem);
+            height: 44rem;
             width: 100%;
             display: flex;
             list-style: none;
