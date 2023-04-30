@@ -34,6 +34,57 @@
         }
     }
 
+    .carousel-footer {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        justify-content: flex-end;
+        margin-inline: a.$md-sys-margin-default;
+        gap: 0.4rem;
+
+        @include a.respond-to('small') {
+            margin-inline: a.$md-sys-margin-small;
+        }
+    
+        @include a.respond-to('medium') {
+            margin-inline: a.$md-sys-margin-medium;
+        }
+    
+        @include a.respond-to('large') {
+            margin-inline: a.$md-sys-margin-large;
+        }
+    
+        @include a.respond-to('x-large') {
+            margin-inline: a.$md-sys-margin-x-large;
+        }
+
+        .carousel-progress {
+            height: 1rem;
+            width: 15rem;
+            background-color: a.$md-sys-color-primary-container-dark;
+            border-radius: a.$md-sys-radius-defalt;
+    
+            .progress-fill {
+                height: 100%;
+                width: 0;
+                max-width: 100%;
+                background-color: a.$md-sys-color-primary-dark;
+                border-radius: a.$md-sys-radius-defalt;
+                transition: width 200ms ease-out;
+            }
+        }
+
+        .scroll-buttons {
+            fill: a.$md-sys-color-primary-dark;
+            transition: opacity 200ms ease;
+        }
+
+        #scroll-button-left {
+            transform: rotate(180deg);
+            opacity: 0;
+        }
+    }
+
     .carousel-wrapper {
         margin-left: a.$md-sys-margin-default;
         margin-right: 0;

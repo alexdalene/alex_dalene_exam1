@@ -316,6 +316,56 @@ html {
     font-size: 32px;
   }
 }
+.carousel-main-container .carousel-footer {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  justify-content: flex-end;
+  margin-inline: 1.6rem;
+  gap: 0.4rem;
+}
+@media (min-width: 600px) {
+  .carousel-main-container .carousel-footer {
+    margin-inline: 3.6rem;
+  }
+}
+@media (min-width: 905px) {
+  .carousel-main-container .carousel-footer {
+    margin-inline: 5rem;
+  }
+}
+@media (min-width: 1240px) {
+  .carousel-main-container .carousel-footer {
+    margin-inline: 20rem;
+  }
+}
+@media (min-width: 1440px) {
+  .carousel-main-container .carousel-footer {
+    margin-inline: 30rem;
+  }
+}
+.carousel-main-container .carousel-footer .carousel-progress {
+  height: 1rem;
+  width: 15rem;
+  background-color: #544600;
+  border-radius: 3rem;
+}
+.carousel-main-container .carousel-footer .carousel-progress .progress-fill {
+  height: 100%;
+  width: 0;
+  max-width: 100%;
+  background-color: #e8c41c;
+  border-radius: 3rem;
+  transition: width 200ms ease-out;
+}
+.carousel-main-container .carousel-footer .scroll-buttons {
+  fill: #e8c41c;
+  transition: opacity 200ms ease;
+}
+.carousel-main-container .carousel-footer #scroll-button-left {
+  transform: rotate(180deg);
+  opacity: 0;
+}
 .carousel-main-container .carousel-wrapper {
   margin-left: 1.6rem;
   margin-right: 0;
@@ -536,6 +586,7 @@ html {
 }
 .navbar-container .navbar #navbar-menu {
   z-index: 99;
+  transition: all 400ms ease-in;
 }
 .navbar-container .navbar .rotate {
   transform: rotate(-90deg);
