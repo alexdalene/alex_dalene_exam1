@@ -5,12 +5,12 @@ let isOpen = false;
 
 navbarMenu.addEventListener("click", () => {
   if (isOpen) {
-    navbarLinks.removeAttribute("isOpen");
+    navbarLinks.setAttribute("isOpen", false);
     navbarMenu.style.transform = "rotate(0deg)";
     isOpen = false;
   } else {
     navbarLinks.setAttribute("isOpen", true);
-    navbarMenu.style.transform = "rotate(90deg)";
+    navbarMenu.style.transform = "rotate(-90deg)";
     isOpen = true;
   }
 });

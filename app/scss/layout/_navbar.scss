@@ -35,7 +35,6 @@
         }
 
         .navbar-links {
-            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -48,6 +47,11 @@
             padding: 0;
             z-index: 98;
             background-color: a.$md-sys-color-background-dark;
+            
+            &[isopen=false] {
+                display: none;
+                height: 0lvh;
+            }
             
             &[isopen=true] {
                 display: flex;
