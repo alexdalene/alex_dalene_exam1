@@ -8,13 +8,13 @@
 }
 @keyframes navbar-open {
   from {
-    height: 0lvh;
+    transform: translateY(-100%);
   }
   to {
-    height: 100lvh;
+    transform: translateY(0);
   }
 }
-@keyframes fade-in {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -217,8 +217,8 @@ html {
 }
 @media (min-width: 1440px) {
   .container-header {
-    margin-right: 30rem;
-    padding-left: 30rem;
+    margin-right: 20%;
+    padding-left: 20%;
   }
 }
 .container-header .info-header {
@@ -303,7 +303,7 @@ html {
 }
 @media (min-width: 1440px) {
   .carousel-main-container .nav-carousel {
-    margin-inline: 30rem;
+    margin-inline: 20%;
   }
 }
 .carousel-main-container .nav-carousel .title-carousel {
@@ -341,25 +341,25 @@ html {
 }
 @media (min-width: 1440px) {
   .carousel-main-container .carousel-footer {
-    margin-inline: 30rem;
+    margin-inline: 20%;
   }
 }
 .carousel-main-container .carousel-footer .carousel-progress {
   height: 1rem;
   width: 15rem;
-  background-color: #544600;
+  background-color: #4b4639;
   border-radius: 3rem;
 }
 .carousel-main-container .carousel-footer .carousel-progress .progress-fill {
   height: 100%;
   width: 0;
   max-width: 100%;
-  background-color: #e8c41c;
+  background-color: #cdc6b4;
   border-radius: 3rem;
   transition: width 200ms ease-out;
 }
 .carousel-main-container .carousel-footer .scroll-buttons {
-  fill: #e8c41c;
+  fill: #e8e2d9;
   transition: opacity 200ms ease;
 }
 .carousel-main-container .carousel-footer #scroll-button-left {
@@ -389,7 +389,7 @@ html {
 }
 @media (min-width: 1440px) {
   .carousel-main-container .carousel-wrapper {
-    margin-left: 30rem;
+    margin-left: 20%;
   }
 }
 .carousel-main-container .carousel-wrapper .carousel-container {
@@ -437,7 +437,7 @@ html {
 }
 @media (min-width: 1440px) {
   .mission-wrapper {
-    margin-inline: 30rem;
+    margin-inline: 20%;
   }
 }
 .mission-wrapper .mission-container {
@@ -525,7 +525,7 @@ html {
 }
 @media (min-width: 1440px) {
   .search-header {
-    margin-inline: 30rem;
+    margin-inline: 20%;
   }
 }
 .search-header input {
@@ -578,6 +578,26 @@ html {
   top: 0;
   z-index: 1000;
 }
+@media (min-width: 600px) {
+  .navbar-container {
+    padding-inline: 3.6rem;
+  }
+}
+@media (min-width: 905px) {
+  .navbar-container {
+    padding-inline: 5rem;
+  }
+}
+@media (min-width: 1240px) {
+  .navbar-container {
+    padding-inline: 20rem;
+  }
+}
+@media (min-width: 1440px) {
+  .navbar-container {
+    padding-inline: 20%;
+  }
+}
 .navbar-container .navbar {
   display: flex;
   justify-content: space-between;
@@ -599,37 +619,70 @@ html {
 .navbar-container .navbar #navbar-logo {
   z-index: 99;
 }
-.navbar-container .navbar .navbar-links {
+.navbar-container .navbar .navbar-links-mobile {
+  position: fixed;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   list-style: none;
-  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
+  height: 100lvh;
   margin: 0;
   padding: 0;
   z-index: 98;
   background-color: #1d1b16;
+  transition: all 600ms ease-out;
 }
-.navbar-container .navbar .navbar-links[isopen=false] {
-  display: none;
-  height: 0lvh;
+.navbar-container .navbar .navbar-links-mobile[isopen=false] {
+  transform: translateY(-100%);
 }
-.navbar-container .navbar .navbar-links[isopen=true] {
-  display: flex;
-  animation: navbar-open 400ms ease-out;
-  height: 100lvh;
+.navbar-container .navbar .navbar-links-mobile[isopen=true] {
+  transform: translateY(0%);
 }
-.navbar-container .navbar .navbar-links a {
+.navbar-container .navbar .navbar-links-mobile .link {
   color: #e8e2d9;
   text-decoration: none;
   font-family: "Quicksand";
   font-weight: 400;
   font-size: 3.6rem;
-  opacity: 1;
-  animation: fade-in 400ms ease-in;
+  opacity: 0;
+}
+.navbar-container .navbar .navbar-links-mobile .link-animation {
+  animation: fadeIn 400ms ease-in-out forwards;
+  animation-delay: 200ms;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.navbar-container .navbar .navbar-links-desktop {
+  display: flex;
+  list-style: none;
+  gap: 2.4rem;
+}
+.navbar-container .navbar .navbar-links-desktop li > a {
+  color: #e8e2d9;
+  font-family: "Quicksand";
+  font-size: 2rem;
+  text-decoration: none;
+}
+.navbar-container .navbar .navbar-links-desktop li > a:hover {
+  color: #e8c41c;
+}
+.navbar-container .navbar .navbar-links-desktop #blog-button {
+  background-color: #e8e2d9;
+  color: #1d1b16;
+  padding: 0.8rem 1.6rem;
+  border-radius: 2rem;
+  font-weight: 700;
 }
 
 .footer-wrapper {

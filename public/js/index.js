@@ -1,20 +1,3 @@
-const navbarMenu = document.querySelector("#navbar-menu");
-const navbarLinks = document.querySelector(".navbar-links");
-
-let isOpen = false;
-
-navbarMenu.addEventListener("click", () => {
-  if (isOpen) {
-    navbarLinks.setAttribute("isOpen", false);
-    navbarMenu.style.transform = "rotate(0deg)";
-    isOpen = false;
-  } else {
-    navbarLinks.setAttribute("isOpen", true);
-    navbarMenu.style.transform = "rotate(-90deg)";
-    isOpen = true;
-  }
-});
-
 // the container that is scrollable
 const carouselContainer = document.querySelector(".carousel-container");
 

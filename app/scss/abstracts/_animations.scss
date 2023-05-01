@@ -1,13 +1,13 @@
 @keyframes navbar-open {
     from {
-        height: 0lvh;
+        transform: translateY(-100%);
     }
     to {
-        height: 100lvh;
+        transform: translateY(0);
     }
 }
 
-@keyframes fade-in {
+@keyframes fadeIn {
     from {
         opacity: 0;
     }
