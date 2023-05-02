@@ -26,6 +26,7 @@ function makeAnimal(animal) {
 
   animalContainer.innerHTML += `
     <article class="animal-wrapper">
+        <a href="javascript:history.back()" class="back-button"> <img src="/public/svg/back.svg" alt=""/>Back</a>
         <h1>${animal.acf.header}</h1>
         <div class="animal-img-container">
             <img
@@ -89,3 +90,15 @@ function makeAnimal(animal) {
     </article>
     `;
 }
+
+// back button with timeout to let page load
+setTimeout(() => {
+  const backBtn = document.querySelector(".back-button");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > window.innerHeight / 2) {
+      backBtn.classList.add("back-button-visible");
+    } else {
+      backBtn.classList.remove("back-button-visible");
+    }
+  });
+}, 2000);

@@ -609,10 +609,35 @@ html {
   justify-content: space-between;
   gap: 2.4rem;
 }
+.animal-container .animal-wrapper .back-button {
+  background-color: #4b4639;
+  color: #cdc6b4;
+  text-decoration: none;
+  font-size: 1.6rem;
+  border-radius: 2rem;
+  border: 1px solid #979080;
+  padding: 0.8rem 1.6rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.animal-container .animal-wrapper .back-button img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.animal-container .animal-wrapper .back-button-visible {
+  position: sticky;
+  top: 100px;
+  left: 1.6rem;
+  animation: fadeIn 0.5s ease-in-out;
+  opacity: 1;
+}
 .animal-container .animal-wrapper h1 {
   font-size: 3.2rem;
   font-family: "Quicksand";
   font-weight: 400;
+  margin-bottom: -1.6rem;
 }
 .animal-container .animal-wrapper .animal-img-container {
   display: grid;

@@ -26,10 +26,38 @@
         justify-content: space-between;
         gap: 2.4rem;
 
+        .back-button {
+            background-color: a.$md-sys-color-surface-variant-dark;
+            color: a.$md-sys-color-on-surface-variant-dark;
+            text-decoration: none;
+            font-size: 1.6rem;
+            border-radius: a.$md-sys-radius-small;
+            border: 1px solid a.$md-sys-color-outline-dark;
+            padding: 0.8rem 1.6rem;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+
+            img {
+                width: 1.6rem;
+                height: 1.6rem;
+            }
+        }
+
+        .back-button-visible {
+            position: sticky;
+            top: 100px;
+            left: 1.6rem;
+            animation: fadeIn 0.5s ease-in-out;
+            opacity: 1;
+        }
+
         h1 {
             font-size: 3.2rem;
             font-family: a.$md-sys-font-quicksand;
             font-weight: 400;
+            margin-bottom: -1.6rem;
         }
 
         .animal-img-container {
