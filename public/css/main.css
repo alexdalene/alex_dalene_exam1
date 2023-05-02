@@ -580,7 +580,28 @@ html {
 }
 
 .animal-container {
-  margin-inline: 1.6rem;
+  margin-left: 1.6rem;
+}
+@media (min-width: 600px) {
+  .animal-container {
+    margin-left: 3.6rem;
+  }
+}
+@media (min-width: 905px) {
+  .animal-container {
+    margin-left: 5rem;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1240px) {
+  .animal-container {
+    margin-left: 20rem;
+  }
+}
+@media (min-width: 1440px) {
+  .animal-container {
+    margin-left: 20%;
+  }
 }
 .animal-container .animal-wrapper {
   display: flex;

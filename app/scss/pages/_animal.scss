@@ -1,7 +1,24 @@
 @use "../abstracts/" as a;
 
 .animal-container {
-    margin-inline: a.$md-sys-margin-default;
+    margin-left: a.$md-sys-margin-default;
+
+    @include a.respond-to('small') {
+        margin-left: a.$md-sys-margin-small;
+    }
+
+    @include a.respond-to('medium') {
+        margin-left: a.$md-sys-margin-medium;
+        flex-direction: row;
+    }
+
+    @include a.respond-to('large') {
+        margin-left: a.$md-sys-margin-large;
+    }
+
+    @include a.respond-to('x-large') {
+        margin-left: a.$md-sys-margin-x-large;
+    }
 
     .animal-wrapper {
         display: flex;
