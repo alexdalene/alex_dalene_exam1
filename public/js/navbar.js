@@ -9,7 +9,7 @@ function makeNavbar() {
               <img src="/public/svg/logo-icon.svg" alt="a simplistic logo with a panda inside a circle" id="navbar-logo" />
               <img src="/public/svg/menu.svg" alt="burger-menu" id="navbar-menu" />
               <ul class="navbar-links-mobile" isopen="false">
-                <li><a href="#TO_BE_CHANGED" class="link">Home</a></li>
+                <li><a href="/index.html" class="link">Home</a></li>
                 <li><a href="#TO_BE_CHANGED" class="link">Blog</a></li>
                 <li><a href="#TO_BE_CHANGED" class="link">Contact</a></li>
                 <li><a href="#TO_BE_CHANGED" class="link">About</a></li>
