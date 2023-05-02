@@ -1,0 +1,94 @@
+@use "../abstracts/" as a;
+
+
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-inline: a.$md-sys-margin-default;
+
+    @include a.respond-to('small') {
+        margin-inline: a.$md-sys-margin-small;
+    }
+
+    @include a.respond-to('medium') {
+        margin-inline: a.$md-sys-margin-medium;
+    }
+
+    @include a.respond-to('large') {
+        margin-inline: a.$md-sys-margin-large;
+    }
+
+    @include a.respond-to('x-large') {
+        margin-inline: a.$md-sys-margin-x-large;
+    }
+
+    .carousel {
+        background-color: a.$md-sys-color-tertiary-container-dark;
+        border-radius: a.$md-sys-radius-defalt;
+        list-style: none;
+        
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin: a.$md-sys-margin-default;
+    margin-top: 0;
+    position: sticky;
+    top: 82px;
+    padding: 1.6rem 0;
+    background-color: a.$md-sys-color-background-dark;
+    align-items: center;
+
+    #search-input {
+        border: none;
+        border-radius: a.$md-sys-radius-small;
+        width: calc(100% / 2);
+        height: 3.6rem;
+        font-size: 1.6rem;
+        padding: 0.8rem 1.6rem;
+        background-color: a.$md-sys-color-on-background-dark;
+        outline: none;
+        color: a.$md-sys-color-surface-variant-dark;
+        transition: width 200ms ease;
+
+        &::placeholder {
+            color: a.$md-sys-color-surface-variant-dark;
+            font-size: 16px;
+        }
+
+        &:focus {
+            box-shadow: a.$md-sys-shadow-1;
+            width: calc((100% / 2) + 1.6rem);
+            transition: width 200ms ease;
+        }
+
+        &:focus::placeholder {
+            color: transparent;
+        }
+    }
+
+    .options-button {
+        background-color: a.$md-sys-color-surface-variant-dark;
+        color: a.$md-sys-color-on-surface-variant-dark;
+        text-decoration: none;
+        font-size: 1.6rem;
+        border-radius: 0.8rem;
+        border: 1px solid a.$md-sys-color-outline-dark;
+        padding: 0.6rem 1.2rem;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+        img {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+}

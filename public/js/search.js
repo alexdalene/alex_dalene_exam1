@@ -32,22 +32,17 @@ function searchPost(post) {
           searchContainer.innerHTML += `
             <li class="search-result">
                 <a href="/public/pages/animal.html?id=${result.id}">
-                <article class="post-wrapper">
+                <article class="search-wrapper">
                     <img
                     src="${result.acf.url}"
                     alt="${result.acf.alt}"
-                    class="post-img"
+                    class="search-img"
                     />
-                    <section class="post-container">
-                    <h3 class="post-title">${result.acf.header}</h3>
-                    <p class="post-paragraph">
-                        ${result.acf.paragraph1}
-                    </p>
+                    <section class="search-info">
+                    <p class="search-title">${result.acf.header}</p>
+                    <p class="search-paragraph">${result.acf.paragraph1}</p>
                     </section>
-                    <footer class="post-footer">
-                    <p>${result.acf.author}</p>
-                    <p>${result.acf.date}</p>
-                    </footer>
+                    <button class="search-button">See</button>
                 </article>
                 </a>
             </li>
@@ -60,25 +55,20 @@ function searchPost(post) {
         searchContainer.innerHTML = "";
         searchContainer.innerHTML += `
         <li class="search-result">
-            <a href="/public/pages/animal.html?id=${postExists.id}">
-            <article class="post-wrapper">
+          <a href="/public/pages/animal.html?id=${postExists.id}">
+            <article class="search-wrapper">
                 <img
                 src="${postExists.acf.url}"
                 alt="${postExists.acf.alt}"
-                class="post-img"
+                class="search-img"
                 />
-                <section class="post-container">
-                <h3 class="post-title">${postExists.acf.header}</h3>
-                <p class="post-paragraph">
-                    ${postExists.acf.paragraph1}
-                </p>
+                <section class="search-info">
+                <p class="search-title">${postExists.acf.header}</p>
+                <p class="search-paragraph">${postExists.acf.paragraph1}</p>
                 </section>
-                <footer class="post-footer">
-                <p>${postExists.acf.author}</p>
-                <p>${postExists.acf.date}</p>
-                </footer>
+                <button class="search-button">See</button>
             </article>
-            </a>
+          </a>
         </li>
         `;
       }

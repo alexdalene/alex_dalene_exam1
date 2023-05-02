@@ -10,7 +10,7 @@ function makeNavbar() {
               <img src="/public/svg/menu.svg" alt="burger-menu" id="navbar-menu" />
               <ul class="navbar-links-mobile" isopen="false">
                 <li><a href="/index.html" class="link">Home</a></li>
-                <li><a href="#TO_BE_CHANGED" class="link">Blog</a></li>
+                <li><a href="/public/pages/posts.html" class="link">Posts</a></li>
                 <li><a href="#TO_BE_CHANGED" class="link">Contact</a></li>
                 <li><a href="#TO_BE_CHANGED" class="link">About</a></li>
               </ul>
@@ -23,7 +23,7 @@ function makeNavbar() {
             <ul class="navbar-links-desktop">
               <li><a href="#TO_BE_CHANGED">Contact</a></li>
               <li><a href="#TO_BE_CHANGED">About</a></li>
-              <li><a href="#TO_BE_CHANGED" id="blog-button" >Blog</a></li>
+              <li><a href="/public/pages/posts.html" id="blog-button" >Posts</a></li>
             </ul>
           </nav>
         `;

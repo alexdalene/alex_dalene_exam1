@@ -70,15 +70,20 @@
             &::placeholder {
                 font-size: 20px;
             }
+
+            &:focus {
+                width: calc(30rem + 2.5rem);
+                transition: width 200ms ease;
+            }
         }
     }
 }
 
 .search-results {
     margin-inline: a.$md-sys-margin-default;
-    padding: 2.4rem;
+    padding: 1.6rem 0;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 0.8rem;
     display: none;
     margin-top: -8rem;
     border-bottom: 1px solid a.$md-sys-color-outline-dark;
@@ -86,10 +91,54 @@
     .search-result {
         list-style: none;
         background-color: a.$md-sys-color-tertiary-container-dark;
-        border-radius: a.$md-sys-radius-big;
+        border-radius: a.$md-sys-radius-small;
 
         a {
             text-decoration: none;
+        }
+
+        .search-wrapper {
+            display: flex;
+            gap: 1.6rem;
+            color: a.$md-sys-color-on-tertiary-container-dark;
+            align-items: center;
+
+            .search-img {
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                width: 6.4rem;
+                border-radius: 0.8rem;
+            }
+
+            .search-info {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                padding-right: 1.6rem;
+
+                .search-title {
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                }
+    
+                .search-paragraph {
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+
+            .search-button {
+                border: none;
+                height: 6.5rem;
+                background-color: a.$md-sys-color-on-tertiary-container-dark;
+                color: a.$md-sys-color-tertiary-container-dark;
+                font-size: 1.6rem;
+                border-radius: 0 0.8rem 0.8rem 0;
+                padding: 0 1.6rem;
+            }
         }
     }
 }
