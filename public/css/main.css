@@ -159,6 +159,7 @@ html {
   height: 60%;
   object-fit: cover;
   border-radius: 3rem;
+  aspect-ratio: 1/1;
 }
 .post-wrapper .post-container {
   padding: 1.6rem;
@@ -166,6 +167,7 @@ html {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  height: 100%;
 }
 .post-wrapper .post-container .post-title {
   font-size: 20px;
@@ -175,6 +177,7 @@ html {
   font-size: 16px;
   font-weight: 400;
   overflow: hidden;
+  max-height: 6rem;
 }
 .post-wrapper .post-footer {
   display: flex;
@@ -412,6 +415,12 @@ html {
   flex: 1 0 100%;
   border-radius: 3rem;
   background-color: #2d4e37;
+}
+.carousel-main-container .carousel-wrapper .carousel-container .carousel a {
+  text-decoration: none;
+}
+.carousel-main-container .carousel-wrapper .carousel-container .carousel a:visited {
+  text-decoration: none;
 }
 
 .mission-wrapper {
