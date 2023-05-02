@@ -590,7 +590,6 @@ html {
 @media (min-width: 905px) {
   .animal-container {
     margin-left: 5rem;
-    flex-direction: row;
   }
 }
 @media (min-width: 1240px) {
@@ -621,6 +620,27 @@ html {
   grid-template-areas: "a a a" "b c d";
   grid-template-rows: 1fr auto;
   gap: 0.4rem;
+  margin-right: 1.6rem;
+}
+@media (min-width: 600px) {
+  .animal-container .animal-wrapper .animal-img-container {
+    margin-right: 3.6rem;
+  }
+}
+@media (min-width: 905px) {
+  .animal-container .animal-wrapper .animal-img-container {
+    margin-right: 5rem;
+  }
+}
+@media (min-width: 1240px) {
+  .animal-container .animal-wrapper .animal-img-container {
+    margin-right: 20rem;
+  }
+}
+@media (min-width: 1440px) {
+  .animal-container .animal-wrapper .animal-img-container {
+    margin-right: 20%;
+  }
 }
 .animal-container .animal-wrapper .animal-img-container .animal-img {
   width: 100%;
@@ -679,6 +699,27 @@ html {
   gap: 1.6rem;
   height: 100%;
   color: #e8e2d9;
+  margin-right: 1.6rem;
+}
+@media (min-width: 600px) {
+  .animal-container .animal-wrapper .animal-info {
+    margin-right: 3.6rem;
+  }
+}
+@media (min-width: 905px) {
+  .animal-container .animal-wrapper .animal-info {
+    margin-right: 5rem;
+  }
+}
+@media (min-width: 1240px) {
+  .animal-container .animal-wrapper .animal-info {
+    margin-right: 20rem;
+  }
+}
+@media (min-width: 1440px) {
+  .animal-container .animal-wrapper .animal-info {
+    margin-right: 20%;
+  }
 }
 .animal-container .animal-wrapper .animal-info .animal-title {
   font-size: 3.2rem;
@@ -702,7 +743,28 @@ html {
   display: flex;
   justify-content: space-between;
   padding-top: 0.4rem;
-  border-top: 1px solid #fff;
+  border-top: 1px solid #e8e2d9;
+  margin-right: 1.6rem;
+}
+@media (min-width: 600px) {
+  .animal-container .animal-wrapper .animal-footer {
+    margin-right: 3.6rem;
+  }
+}
+@media (min-width: 905px) {
+  .animal-container .animal-wrapper .animal-footer {
+    margin-right: 5rem;
+  }
+}
+@media (min-width: 1240px) {
+  .animal-container .animal-wrapper .animal-footer {
+    margin-right: 20rem;
+  }
+}
+@media (min-width: 1440px) {
+  .animal-container .animal-wrapper .animal-footer {
+    margin-right: 20%;
+  }
 }
 
 .navbar-container {
