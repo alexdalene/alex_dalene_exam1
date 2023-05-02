@@ -1,4 +1,6 @@
-const navbar = document.querySelector(".navbar-container");
+const navbar = document.createElement("header");
+navbar.classList.add("navbar-container");
+document.body.prepend(navbar);
 
 function makeNavbar() {
   if (document.documentElement.clientWidth < 905) {

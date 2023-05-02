@@ -51,27 +51,36 @@ function makeAnimal(animal) {
         </div>
         <aside class="animal-categories">
             <div class="animal-category">
+            <img src="/public/svg/habitat.svg" alt="" class="category-icon"/>
             <h3>Habitat</h3>
-            ${animal.acf.habitat}
+            <p>${animal.acf.habitat}</p>
             </div>
             <div class="animal-category">
+            <img src="/public/svg/diet.svg" alt="" class="category-icon"/>
             <h3>Diet</h3>
-            ${animal.acf.diet}
+            <p>${animal.acf.diet}</p>
             </div>
             <div class="animal-category">
+            <img src="/public/svg/population.svg" alt="" class="category-icon"/>
             <h3>Population</h3>
-            ${animal.acf.population}
+            <p>${animal.acf.population}</p>
             </div>
         </aside>
-        <section class="animal-container">
+        <section class="animal-info">
             <h2 class="animal-title">${animal.acf.title}</h2>
             <p class="animal-paragraph">
-                ${animal.acf.paragraphTop}
+                ${animal.acf.paragraph1}
+            </p>
+            <p class="animal-paragraph">
+                ${animal.acf.paragraph2}
             </p>
             <p class="animal-callout">${animal.acf.callout}</p>
             <p class="animal-paragraph">
-            ${animal.acf.paragraphBot}
-        </p>
+            ${animal.acf.paragraph3}
+            </p>
+            <p class="animal-paragraph">
+            ${animal.acf.paragraph4}
+            </p>
         </section>
         <footer class="animal-footer">
             <p>${animal.acf.author}</p>

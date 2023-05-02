@@ -25,7 +25,7 @@ function makePost(post) {
         <section class="post-container">
           <h3 class="post-title">${post.acf.header}</h3>
           <p class="post-paragraph">
-            ${post.acf.paragraphTop}
+            ${post.acf.paragraph1}
           </p>
         </section>
         <footer class="post-footer">

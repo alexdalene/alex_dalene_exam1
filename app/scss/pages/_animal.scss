@@ -1,0 +1,125 @@
+@use "../abstracts/" as a;
+
+.animal-container {
+    margin-inline: a.$md-sys-margin-default;
+
+    .animal-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        gap: 2.4rem;
+
+        h1 {
+            font-size: 3.2rem;
+            font-family: a.$md-sys-font-quicksand;
+            font-weight: 400;
+        }
+
+        .animal-img-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: "a a a" "b c d";
+            grid-template-rows: 1fr auto;
+            gap: 0.4rem;
+
+            .animal-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.4rem;
+                aspect-ratio: 1/1;
+
+                &:nth-child(1) {
+                    grid-area: 1 / span 3;
+                }
+
+                &:nth-child(2) {
+                    grid-area: 2 / 1;
+                }
+
+                &:nth-child(3) {
+                    grid-area: 2 / 2;
+                }
+
+                &:nth-child(4) {
+                    grid-area: 2 / 3;
+                }
+            }
+        }
+
+        .animal-categories {
+            display: flex;
+            gap: 0.4rem;
+            overflow: scroll;
+            width: 100%;
+            scroll-behavior: smooth;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .animal-category {
+                display: flex;
+                flex-direction: column;
+                padding: 1.6rem;
+                min-width: 15rem;
+                height: fit-content;
+                background-color: a.$md-sys-color-tertiary-container-dark;
+                border-radius: a.$md-sys-radius-defalt;
+                color: a.$md-sys-color-on-tertiary-container-dark;
+                gap: 0.4rem;
+
+                .category-icon {
+                    aspect-ratio: 1/1;
+                    width: 2.4rem;
+                    margin-bottom: 0.4rem;
+                }
+
+                h3 {
+                    font-size: 1.6rem;
+                }
+
+                p {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        .animal-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            height: 100%;
+            color: a.$md-sys-color-on-background-dark;
+
+            .animal-title {
+                font-size: 3.2rem;
+                font-family: a.$md-sys-font-quicksand;
+                font-weight: 700;
+                line-height: 1.15;
+                margin-bottom: 0.8rem;
+            }
+
+            .animal-paragraph {
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            .animal-callout {
+                background-color: a.$md-sys-color-tertiary-dark;
+                color: a.$md-sys-color-on-tertiary-dark;
+                padding: 2.4rem;
+                border-radius: a.$md-sys-radius-small;
+                font-size: 1.6rem;
+            }
+        }
+
+        .animal-footer {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 0.4rem;
+            border-top: 1px solid #fff;
+        }
+    }
+}
