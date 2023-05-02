@@ -10,6 +10,7 @@ async function getAnimal() {
   const result = await response.json();
   makeAnimal(result);
   console.log(result);
+  backBtn();
 }
 
 getAnimal();
@@ -91,8 +92,7 @@ function makeAnimal(animal) {
     `;
 }
 
-// back button with timeout to let page load
-setTimeout(() => {
+function backBtn() {
   const backBtn = document.querySelector(".back-button");
   window.addEventListener("scroll", () => {
     if (window.scrollY > window.innerHeight / 2) {
@@ -101,4 +101,4 @@ setTimeout(() => {
       backBtn.classList.remove("back-button-visible");
     }
   });
-}, 2000);
+}

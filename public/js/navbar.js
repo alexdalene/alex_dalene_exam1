@@ -61,10 +61,8 @@ const options = {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("link-animation");
-        console.log("intersecting");
       } else {
         entry.target.classList.remove("link-animation");
-        console.log("not intersecting");
       }
     });
   }, options);
