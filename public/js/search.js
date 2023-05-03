@@ -1,10 +1,9 @@
 async function searchIndex() {
   const response = await fetch(
-    "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal"
+    "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal?_embed&per_page=100"
   );
   const result = await response.json();
   result.forEach((result) => {
-    console.log(result);
     searchPost(result);
   });
 }
@@ -49,9 +48,6 @@ function searchPost(post) {
             `;
         });
       } else if (postExists) {
-        console.log(
-          `The post ${postExists.acf.header} already exists in the array`
-        );
         searchContainer.innerHTML = "";
         searchContainer.innerHTML += `
         <li class="search-result">
