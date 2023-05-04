@@ -55,7 +55,6 @@ function makePost(post) {
                   alt="${post[i].acf.alt}"
                   class="post-img"
                 />
-                <section class="post-outer-container">
                   <section class="post-container">
                     <h3 class="post-title">${post[i].acf.header}</h3>
                     <p class="post-paragraph">
@@ -66,7 +65,6 @@ function makePost(post) {
                     <p>${post[i].acf.author}</p>
                     <p>${post[i].acf.date}</p>
                   </footer>
-                </section>
               </article>
             </a>
           </li>

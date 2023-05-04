@@ -5,7 +5,7 @@
     background-color: a.$md-sys-color-background-dark;
     padding: a.$md-sys-margin-default;
     position: sticky;
-    top: 0;
+    top: -1px;
     z-index: 1000;
 
     @include a.respond-to('small') {

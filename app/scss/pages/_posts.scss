@@ -3,9 +3,10 @@
 
 .posts-container {
     display: flex;
-    flex-direction: column;
     gap: 1.6rem;
     margin-inline: a.$md-sys-margin-default;
+    flex-wrap: wrap;
+    justify-content: center;
 
     @include a.respond-to('small') {
         margin-inline: a.$md-sys-margin-small;
@@ -13,6 +14,8 @@
 
     @include a.respond-to('medium') {
         margin-inline: a.$md-sys-margin-medium;
+        justify-content: initial;
+        margin-top: 3.6rem;
     }
 
     @include a.respond-to('large') {
@@ -27,6 +30,8 @@
         background-color: a.$md-sys-color-tertiary-container-dark;
         border-radius: a.$md-sys-radius-defalt;
         list-style: none;
+        flex: 1 1 320px;
+        max-width: 424px;
         
         a {
             text-decoration: none;
@@ -37,28 +42,26 @@
 .options {
     display: flex;
     justify-content: space-between;
-    margin: a.$md-sys-margin-default;
-    margin-top: 0;
     position: sticky;
-    top: 82px;
-    padding: 1.6rem 0;
+    top: 80px;
+    padding: 1.6rem;
     background-color: a.$md-sys-color-background-dark;
     align-items: center;
 
     @include a.respond-to('small') {
-        margin-inline: a.$md-sys-margin-small;
+        padding-inline: a.$md-sys-margin-small;
     }
 
     @include a.respond-to('medium') {
-        margin-inline: a.$md-sys-margin-medium;
+        padding-inline: a.$md-sys-margin-medium;
     }
 
     @include a.respond-to('large') {
-        margin-inline: a.$md-sys-margin-large;
+        padding-inline: a.$md-sys-margin-large;
     }
 
     @include a.respond-to('x-large') {
-        margin-inline: a.$md-sys-margin-x-large;
+        padding-inline: a.$md-sys-margin-x-large;
     }
 
     #search-input {

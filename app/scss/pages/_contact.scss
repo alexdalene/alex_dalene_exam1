@@ -1,0 +1,166 @@
+@use "../abstracts/" as a;
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    min-height: 100lvh;
+
+    @include a.respond-to('medium') {
+        flex-direction: row;
+        gap: 1.6rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    margin-inline: a.$md-sys-margin-default;
+    flex: 1;
+
+    @include a.respond-to('small') {
+        margin-inline: a.$md-sys-margin-small;
+    }
+
+    @include a.respond-to('medium') {
+        margin-left: a.$md-sys-margin-medium;
+    }
+
+    @include a.respond-to('large') {
+        margin-left: a.$md-sys-margin-large;
+    }
+
+    @include a.respond-to('x-large') {
+        margin-left: a.$md-sys-margin-x-large;
+    }
+
+    .contact-title {
+        font-size: 3.2rem;
+        font-family: a.$md-sys-font-quicksand;
+        font-weight: 400;
+        line-height: 1.15;
+        margin-block: 2.4rem;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        label {
+            display: none;
+        }
+
+        input, textarea {
+            font-size: 2rem;
+            outline: none;
+            border: none;
+            background-color: a.$md-sys-color-surface-container-high;
+            border-bottom: 1px solid a.$md-sys-color-outline-dark;
+            height: 6rem;
+            font-weight: 400;
+            padding: 1.6rem;
+            font-family: a.$md-sys-font-quicksand;
+            color: a.$md-sys-color-on-surface-dark;
+            transition: border-bottom 0.2s ease-in-out;
+
+            &::placeholder {
+                color: a.$md-sys-color-on-surface-variant-dark;
+                font-weight: 400;
+            }
+
+            &:is(:focus, :hover, :focus-visible) {
+                background-color: adjust-color($color: a.$md-sys-color-surface-container-high, $hue: 0, $saturation: 0%, $lightness: 2.5%, $alpha: 1.0);
+            }
+
+            // style autofill
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+                transition: background-color 5000s ease-in-out 0s;
+                -webkit-text-fill-color: a.$md-sys-color-on-surface-dark;
+            }
+        }
+
+        .valid {
+            border-bottom: 1px solid a.$md-sys-color-primary-dark;
+        }
+
+        .invalid {
+            border-bottom: 1px solid a.$md-sys-color-error-dark;
+        }
+
+        textarea {
+            height: 12rem;
+        }
+
+        .contact-button {
+            background-color: a.$md-sys-color-primary-dark;
+            color: a.$md-sys-color-on-primary-dark;
+            font-size: 1.6rem;
+            font-weight: 700;
+            padding: 1.2rem 1.6rem;
+            border-radius: a.$md-sys-radius-defalt;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            font-size: 2rem;
+            font-weight: 400;
+            width: 15rem;
+            align-self: flex-end;
+            transition: background-color 200ms ease-in-out;
+
+            &:disabled {
+                background-color: a.$md-sys-color-primary-container-dark;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+.thank-you {
+    display: flex;
+    flex-direction: column;
+    margin-inline: a.$md-sys-margin-default;
+    gap: 1.6rem;
+    background-color: a.$md-sys-color-secondary-dark;
+    color: a.$md-sys-color-on-secondary-dark;
+    padding: 2.4rem;
+    border-radius: a.$md-sys-radius-defalt;
+    flex: 1;
+    height: fit-content;
+
+    @include a.respond-to('small') {
+        margin-inline: a.$md-sys-margin-small;
+    }
+
+    @include a.respond-to('medium') {
+        margin-right: a.$md-sys-margin-medium;
+    }
+
+    @include a.respond-to('large') {
+        margin-right: a.$md-sys-margin-large;
+    }
+
+    @include a.respond-to('x-large') {
+        margin-right: a.$md-sys-margin-x-large;
+    }
+
+    h2 {
+        font-size: 3.2rem;
+        font-family: a.$md-sys-font-quicksand;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 2rem;
+        font-weight: 400;
+
+        &:last-child {
+            font-style: italic;
+        }
+    }
+}

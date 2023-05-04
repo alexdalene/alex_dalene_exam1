@@ -6,30 +6,12 @@
     height: 100%;
     justify-content: space-between;
 
-    @include a.respond-to('small') {
-        flex-direction: row;
-    }
-
     .post-img {
         height: 60%;
         object-fit: cover;
         border-radius: a.$md-sys-radius-defalt;
         aspect-ratio: 1/1;
         object-position: center;
-
-        @include a.respond-to('small') {
-            width: 50%;
-            height: 100%;
-            border-radius: a.$md-sys-radius-defalt 0 0 a.$md-sys-radius-defalt;
-        }
-    }
-
-    .post-outer-container {
-        display: flex;
-        flex-direction: column;
-        gap: 0.4rem;
-        height: 100%;
-        width: 100%;
     }
 
     .post-container {
@@ -50,10 +32,6 @@
             font-weight: 400;
             overflow: hidden;
             max-height: 6rem;
-
-            @include a.respond-to('small') {
-                max-height: 10.9rem;
-            }
         }
     }
 

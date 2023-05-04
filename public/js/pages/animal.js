@@ -29,45 +29,47 @@ function makeAnimal(animal) {
     <article class="animal-wrapper">
         <a href="javascript:history.back()" class="back-button"> <img src="/public/svg/back.svg" alt=""/>Back</a>
         <h1>${animal.acf.header}</h1>
-        <div class="animal-img-container">
-            <img
-                src="${animal.acf.url}"
-                alt="${animal.acf.alt}"
-                class="animal-img"
-            />
-            <img
-                src="${animal.acf.image1}"
-                alt="${animal.acf.alt1}"
-                class="animal-img"
-            />
-            <img
-                src="${animal.acf.image2}"
-                alt="${animal.acf.alt2}"
-                class="animal-img"
-            />
-            <img
-                src="${animal.acf.image3}"
-                alt="${animal.acf.alt3}"
-                class="animal-img"
-            />
-        </div>
-        <aside class="animal-categories">
-            <div class="animal-category">
-            <img src="/public/svg/habitat.svg" alt="" class="category-icon"/>
-            <h3>Habitat</h3>
-            <p>${animal.acf.habitat}</p>
-            </div>
-            <div class="animal-category">
-            <img src="/public/svg/diet.svg" alt="" class="category-icon"/>
-            <h3>Diet</h3>
-            <p>${animal.acf.diet}</p>
-            </div>
-            <div class="animal-category">
-            <img src="/public/svg/population.svg" alt="" class="category-icon"/>
-            <h3>Population</h3>
-            <p>${animal.acf.population}</p>
-            </div>
-        </aside>
+        <section class="animal-outer-container">
+          <div class="animal-img-container">
+              <img
+                  src="${animal.acf.url}"
+                  alt="${animal.acf.alt}"
+                  class="animal-img"
+              />
+              <img
+                  src="${animal.acf.image1}"
+                  alt="${animal.acf.alt1}"
+                  class="animal-img"
+              />
+              <img
+                  src="${animal.acf.image2}"
+                  alt="${animal.acf.alt2}"
+                  class="animal-img"
+              />
+              <img
+                  src="${animal.acf.image3}"
+                  alt="${animal.acf.alt3}"
+                  class="animal-img"
+              />
+          </div>
+          <aside class="animal-categories">
+              <div class="animal-category">
+              <img src="/public/svg/habitat.svg" alt="" class="category-icon"/>
+              <h3>Habitat</h3>
+              <p>${animal.acf.habitat}</p>
+              </div>
+              <div class="animal-category">
+              <img src="/public/svg/diet.svg" alt="" class="category-icon"/>
+              <h3>Diet</h3>
+              <p>${animal.acf.diet}</p>
+              </div>
+              <div class="animal-category">
+              <img src="/public/svg/population.svg" alt="" class="category-icon"/>
+              <h3>Population</h3>
+              <p>${animal.acf.population}</p>
+              </div>
+          </aside>
+        </section>
         <section class="animal-info">
             <h2 class="animal-title">${animal.acf.title}</h2>
             <p class="animal-paragraph">
