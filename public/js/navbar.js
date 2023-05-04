@@ -1,10 +1,11 @@
 const navbar = document.createElement("header");
 navbar.classList.add("navbar-container");
 document.body.prepend(navbar);
-let isOnMobile = true;
+let isOnMobile;
 
 function makeNavbar() {
   if (document.documentElement.clientWidth < 905) {
+    isOnMobile = true;
     navbar.innerHTML += `
           <nav class="navbar">
             <a href="/index.html">
