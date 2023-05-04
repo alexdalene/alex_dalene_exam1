@@ -298,6 +298,17 @@
     gap: 3.6rem;
     flex-direction: column;
 
+    .overlay-blur {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        backdrop-filter: blur(20px);
+    }
+
     .overlay-image {
         width: 100%;
         object-fit: cover;
@@ -316,55 +327,26 @@
 
     .overlay-close {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 10px;
+        right: 10px;
         padding: 1.2rem;
         cursor: pointer;
         background-color: a.$md-sys-color-on-tertiary-container-dark;
         font-size: 2.4rem;
         outline: none;
         border: none;
+        border-radius: a.$md-sys-radius-defalt;
+        transition: border-radius 200ms ease;
 
-        img {
-            width: 2.4rem;
-            height: 2.4rem;
+        &:is(:hover) {
+            background-color: adjust-color($color: a.$md-sys-color-on-tertiary-container-dark, $hue: 0, $saturation: 0%, $lightness: 5%, $alpha: 1.0);
+            border-radius: a.$md-sys-radius-small;
+            box-shadow: a.$md-sys-shadow-0;
         }
-    }
-
-    .overlay-next {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-        padding: 1.2rem;
-        cursor: pointer;
-        background-color: a.$md-sys-color-on-tertiary-container-dark;
-        font-size: 2.4rem;
-        outline: none;
-        border: none;
 
         img {
             width: 2.4rem;
             height: 2.4rem;
-        }
-    }
-
-    .overlay-prev {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        padding: 1.2rem;
-        cursor: pointer;
-        background-color: a.$md-sys-color-on-tertiary-container-dark;
-        font-size: 2.4rem;
-        outline: none;
-        border: none;
-
-        img {
-            width: 2.4rem;
-            height: 2.4rem;
-            transform: rotate(180deg);
         }
     }
 }

@@ -1024,6 +1024,16 @@ html {
   gap: 3.6rem;
   flex-direction: column;
 }
+.overlay .overlay-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  backdrop-filter: blur(20px);
+}
 .overlay .overlay-image {
   width: 100%;
   object-fit: cover;
@@ -1043,51 +1053,25 @@ html {
 }
 .overlay .overlay-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   padding: 1.2rem;
   cursor: pointer;
   background-color: #c6eccd;
   font-size: 2.4rem;
   outline: none;
   border: none;
+  border-radius: 3rem;
+  transition: border-radius 200ms ease;
+}
+.overlay .overlay-close:is(:hover) {
+  background-color: #d9f2de;
+  border-radius: 2rem;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
 .overlay .overlay-close img {
   width: 2.4rem;
   height: 2.4rem;
-}
-.overlay .overlay-next {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  padding: 1.2rem;
-  cursor: pointer;
-  background-color: #c6eccd;
-  font-size: 2.4rem;
-  outline: none;
-  border: none;
-}
-.overlay .overlay-next img {
-  width: 2.4rem;
-  height: 2.4rem;
-}
-.overlay .overlay-prev {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  padding: 1.2rem;
-  cursor: pointer;
-  background-color: #c6eccd;
-  font-size: 2.4rem;
-  outline: none;
-  border: none;
-}
-.overlay .overlay-prev img {
-  width: 2.4rem;
-  height: 2.4rem;
-  transform: rotate(180deg);
 }
 
 .posts-container {

@@ -118,6 +118,9 @@ function getImages() {
       const overlay = document.createElement("div");
       overlay.classList.add("overlay");
 
+      const overlayBlur = document.createElement("div");
+      overlayBlur.classList.add("overlay-blur");
+
       const overlayImage = document.createElement("img");
       overlayImage.classList.add("overlay-image");
       overlayImage.src = image.src;
@@ -126,6 +129,8 @@ function getImages() {
       overlayClose.classList.add("overlay-close");
       overlayClose.innerHTML = `<img src="/public/svg/close.svg" alt=""/>`;
 
+      // append elements to overlay
+      overlay.appendChild(overlayBlur);
       overlay.appendChild(overlayClose);
       overlay.appendChild(overlayImage);
       document.body.appendChild(overlay);
@@ -134,6 +139,9 @@ function getImages() {
       overlayClose.addEventListener("click", () => {
         overlay.remove();
       });
+
+      // set background iomage to same as image clicked
+      overlay.style.backgroundImage = `url(${image.src})`;
     });
   });
 }
