@@ -108,6 +108,8 @@
         list-style: none;
         background-color: a.$md-sys-color-tertiary-container-dark;
         border-radius: a.$md-sys-radius-small;
+        width: clamp(20rem, 100%, 60rem);
+        margin: 0 auto;
 
         a {
             text-decoration: none;
@@ -156,6 +158,13 @@
                 font-size: 1.6rem;
                 border-radius: 0 0.8rem 0.8rem 0;
                 padding: 0 1.6rem;
+                cursor: pointer;
+                transition: all 200ms ease;
+
+                &:is(:hover) {
+                    background-color: a.$md-sys-color-primary-dark;
+                    color: a.$md-sys-color-on-primary-dark;
+                }
             }
         }
     }

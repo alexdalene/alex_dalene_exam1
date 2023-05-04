@@ -6,8 +6,8 @@ function makeNavbar() {
   if (document.documentElement.clientWidth < 905) {
     navbar.innerHTML += `
           <nav class="navbar">
-            <a href="/index.html">
-              <img src="/public/svg/logo-icon.svg" alt="a simplistic logo with a panda inside a circle" id="navbar-logo" />
+            <a href="/index.html" id="navbar-logo">
+              <img src="/public/svg/logo-icon.svg" alt="a simplistic logo with a panda inside a circle" />
             </a>
               <img src="/public/svg/menu.svg" alt="burger-menu" id="navbar-menu" />
               <ul class="navbar-links-mobile" isopen="false">

@@ -22,15 +22,15 @@ function scrollProgressBar() {
     progressFill.style.width = "0%";
   }
 
-  // is progress more than 20% -> show the left button
-  if (val > 20) {
+  // is progress more than 10% -> show the left button
+  if (val > 10) {
     scrollButtonLeft.style.opacity = 1;
   } else {
     scrollButtonLeft.style.opacity = 0;
   }
 
-  // is progress more than 80% -> hide the right button
-  if (val > 80) {
+  // is progress more than 90% -> hide the right button
+  if (val > 90) {
     scrollButtonRight.style.opacity = 0;
   } else {
     scrollButtonRight.style.opacity = 1;
@@ -38,3 +38,17 @@ function scrollProgressBar() {
 }
 
 carouselContainer.addEventListener("scroll", scrollProgressBar);
+
+// scroll left
+function scrollLeft() {
+  carouselContainer.scrollLeft -= 308;
+}
+
+scrollButtonLeft.addEventListener("click", scrollLeft);
+
+// scroll right
+function scrollRight() {
+  carouselContainer.scrollLeft += 308;
+}
+
+scrollButtonRight.addEventListener("click", scrollRight);

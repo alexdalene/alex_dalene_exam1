@@ -32,6 +32,16 @@
                 font-size: 32px;
             }
         }
+
+        .button-outline {
+            &:is(:hover) {
+                background-color: a.$md-sys-color-surface-variant-dark;
+            }
+        
+            &:is(:focus, :focus-visible) {
+                background-color: adjust-color($color: a.$md-sys-color-surface-variant-dark, $hue: 0, $saturation: 0%, $lightness: 5%, $alpha: 1.0);
+            }
+        }
     }
 
     .carousel-footer {
@@ -76,7 +86,15 @@
 
         .scroll-buttons {
             fill: a.$md-sys-color-on-background-dark;
-            transition: opacity 200ms ease;
+            transition: all 200ms ease-in-out;
+
+            &:is(:hover) {
+                fill: a.$md-sys-color-primary-dark;
+            }
+
+            &:is(:focus, :focus-visible, :active) {
+                fill: a.$md-sys-color-primary-container-dark;
+            }
         }
 
         #scroll-button-left {
@@ -117,7 +135,14 @@
             overflow: scroll;
             scroll-behavior: smooth;
             gap: 1.6rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
 
+            // Hide scrollbar for IE, Edge and Firefox
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+
+            // Hide scrollbar for Chrome, Safari and Opera
             &::-webkit-scrollbar {
                 display: none;
             }
@@ -128,6 +153,15 @@
                 flex: 1 0 100%;
                 border-radius: a.$md-sys-radius-defalt;
                 background-color: a.$md-sys-color-tertiary-container-dark;
+                transition: background-color 200ms ease-in-out;
+
+                &:is(:hover) {
+                    background-color: adjust-color($color: a.$md-sys-color-tertiary-container-dark, $hue: 0, $saturation: 0%, $lightness: 2.5%, $alpha: 1.0);
+                }
+
+                &:last-child {
+                    margin-right: 1.6rem;
+                }
                 
                 a {
                     text-decoration: none;

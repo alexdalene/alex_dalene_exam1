@@ -31,7 +31,7 @@
         border-radius: a.$md-sys-radius-defalt;
         list-style: none;
         flex: 1 1 320px;
-        max-width: 424px;
+        max-width: 432px;
         
         a {
             text-decoration: none;
@@ -129,4 +129,9 @@
     margin-bottom: 1.6rem;
     margin-inline: auto;
     margin-block: 2.4rem;
+    transition: all 200ms ease;
+
+    &:is(:hover) {
+        background-color: adjust-color($color: a.$md-sys-color-surface-variant-dark, $hue: 0, $saturation: 0%, $lightness: 2.5%, $alpha: 1.0);
+    }
 }

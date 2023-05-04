@@ -5,6 +5,9 @@
     flex-direction: column;
     margin-top: 1.6rem;
     margin-inline: a.$md-sys-margin-default;
+    align-items: center;
+    justify-content: center;
+    min-height: 100lvh;
 
     @include a.respond-to('small') {
         margin-inline: a.$md-sys-margin-small;
@@ -22,78 +25,77 @@
         margin-inline: a.$md-sys-margin-x-large;
     }
 
-    section:nth-child(1) {
+    section {
         display: flex;
         flex-direction: column;
         gap: 1.6rem;
-        background-color: a.$md-sys-color-secondary-container-dark;
-        color: a.$md-sys-color-on-secondary-container-dark;
         padding: 2.4rem;
-        border-radius: a.$md-sys-radius-defalt a.$md-sys-radius-defalt 0 0;
+        width: clamp(300px, 100%, 824px);
 
-        h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-        }
+        &:nth-child(1) {
+            background-color: a.$md-sys-color-secondary-container-dark;
+            color: a.$md-sys-color-on-secondary-container-dark;
+            border-radius: a.$md-sys-radius-defalt a.$md-sys-radius-defalt 0 0;
 
-        p {
-            font-size: 2rem;
-            font-weight: 400;
-        }
-    }
-
-    section:nth-child(2) {
-        display: flex;
-        flex-direction: column;
-        gap: 1.6rem;
-        background-color: a.$md-sys-color-secondary-dark;
-        color: a.$md-sys-color-on-secondary-dark;
-        padding: 2.4rem;
-
-        h2 {
-            font-size: 3.2rem;
-            font-family: a.$md-sys-font-quicksand;
-            font-weight: 400;
-        }
-
-        p {
-            font-size: 2rem;
-            font-weight: 400;
-        }
-    }
-
-    section:nth-child(3) {
-        display: flex;
-        flex-direction: column;
-        gap: 1.6rem;
-        background-color: a.$md-sys-color-secondary-container-dark;
-        color: a.$md-sys-color-on-secondary-container-dark;
-        padding: 2.4rem;
-        border-radius: 0 0 a.$md-sys-radius-defalt a.$md-sys-radius-defalt;
-
-        h2 {
-            font-size: 3.2rem;
-            font-family: a.$md-sys-font-quicksand;
-            font-weight: 400;
-        }
-
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 1.6rem;
-            list-style: none;
-            padding-inline-start: 0;
-
-            li {
-                font-size: 2rem;
-                padding: 1.2rem 1.6rem;
-                border-radius: a.$md-sys-radius-defalt;
-                background-color: a.$md-sys-color-on-secondary-container-dark;
-                text-align: center;
-                color: a.$md-sys-color-secondary-container-dark;
-                width: fit-content;
+            h1 {
+                font-size: 3.2rem;
                 font-weight: 700;
+            }
+
+            p {
+                font-size: 2rem;
+                font-weight: 400;
+            }
+        }
+
+        &:nth-child(2) {
+            background-color: a.$md-sys-color-secondary-dark;
+            color: a.$md-sys-color-on-secondary-dark;
+
+            h2 {
+                font-size: 3.2rem;
+                font-family: a.$md-sys-font-quicksand;
+                font-weight: 400;
+            }
+
+            p {
+                font-size: 2rem;
+                font-weight: 400;
+            }
+        }
+
+        &:nth-child(3) {
+            background-color: a.$md-sys-color-secondary-container-dark;
+            color: a.$md-sys-color-on-secondary-container-dark;
+            border-radius: 0 0 a.$md-sys-radius-defalt a.$md-sys-radius-defalt;
+
+            h2 {
+                font-size: 3.2rem;
+                font-family: a.$md-sys-font-quicksand;
+                font-weight: 400;
+            }
+
+            ul {
+                display: flex;
+                gap: 1.6rem;
+                list-style: none;
+                padding-inline-start: 0;
+                flex-wrap: wrap;
+
+                li {
+                    font-size: 2rem;
+                    padding: 1.2rem 1.6rem;
+                    border-radius: a.$md-sys-radius-defalt;
+                    background-color: a.$md-sys-color-on-secondary-container-dark;
+                    text-align: center;
+                    color: a.$md-sys-color-secondary-container-dark;
+                    width: 100%;
+
+                    @include a.respond-to('small') {
+                        width: fit-content;
+                    }
                 }
             }
         }
     }
+}

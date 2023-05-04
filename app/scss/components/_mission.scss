@@ -73,5 +73,17 @@
                 border-radius: 0 2rem 2rem 0;
             }
         }
+
+        .button-mission {
+            &:is(:hover) {
+                background-color: adjust-color($color: a.$md-sys-color-primary-fixed, $hue: 0, $saturation: 0%, $lightness: -10%, $alpha: 1.0);
+                box-shadow: a.$md-sys-shadow-0;
+            }
+
+            &:is(:focus, :focus-visible) {
+                background-color: adjust-color($color: a.$md-sys-color-primary-fixed, $hue: 0, $saturation: 0%, $lightness: -15%, $alpha: 1.0);
+                box-shadow: a.$md-sys-shadow-1;
+            }
+        }
     }
 }

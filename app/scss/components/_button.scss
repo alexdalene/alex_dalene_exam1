@@ -11,6 +11,7 @@
     width: 100%;
     max-width: 13rem;
     font-weight: 400;
+    transition: all 200ms ease-out;
 }
 
 .button-outline {
@@ -23,6 +24,7 @@
     border-radius: 99rem;
     text-align: center;
     max-width: 13rem;
+    transition: all 200ms ease-out;
 
     @include a.respond-to('medium') {
         font-size: 24px;

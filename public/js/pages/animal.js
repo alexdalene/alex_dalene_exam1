@@ -108,8 +108,10 @@ function backBtn() {
   });
 }
 
+// click on image to open modal with gallery of images from animal
 function getImages() {
   const images = document.querySelectorAll(".animal-img");
+  console.log(images);
 
   images.forEach((image) => {
     image.addEventListener("click", () => {
@@ -120,10 +122,16 @@ function getImages() {
       overlayImage.classList.add("overlay-image");
       overlayImage.src = image.src;
 
+      const overlayClose = document.createElement("button");
+      overlayClose.classList.add("overlay-close");
+      overlayClose.innerHTML = `<img src="/public/svg/close.svg" alt=""/>`;
+
+      overlay.appendChild(overlayClose);
       overlay.appendChild(overlayImage);
       document.body.appendChild(overlay);
 
-      overlay.addEventListener("click", () => {
+      // close overlay
+      overlayClose.addEventListener("click", () => {
         overlay.remove();
       });
     });

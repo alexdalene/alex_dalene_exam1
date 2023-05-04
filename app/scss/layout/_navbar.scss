@@ -5,8 +5,8 @@
     background-color: a.$md-sys-color-background-dark;
     padding: a.$md-sys-margin-default;
     position: sticky;
-    top: -1px;
-    z-index: 1000;
+    top: 0;
+    z-index: 100;
 
     @include a.respond-to('small') {
         padding-inline: a.$md-sys-margin-small;
@@ -36,6 +36,10 @@
             transition: all 400ms ease-in;
         }
 
+        #navbar-logo {
+            z-index: 99;
+        }
+
         .rotate {
             transform: rotate(-90deg);
             transition: 400ms ease-out;
@@ -44,10 +48,6 @@
                 transition: 400ms ease;
                 fill: a.$md-sys-color-primary-dark;
             }
-        }
-
-        #navbar-logo {
-            z-index: 99;
         }
 
         .navbar-links-mobile {
@@ -110,6 +110,7 @@
                 font-family: a.$md-sys-font-quicksand;
                 font-size: 2rem;
                 text-decoration: none;
+                transition: color 200ms ease-in-out;
 
                 &:hover {
                     color: a.$md-sys-color-primary-dark;
@@ -122,6 +123,12 @@
                 padding: 0.8rem 1.6rem;
                 border-radius: a.$md-sys-radius-small;
                 font-weight: 700;
+                transition: all 200ms ease-in-out;
+
+                &:hover {
+                    background-color: a.$md-sys-color-primary-dark;
+                    color: a.$md-sys-color-on-primary-dark;
+                }
             }
         }
     }
