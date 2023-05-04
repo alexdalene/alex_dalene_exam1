@@ -14,7 +14,7 @@ function makeNavbar() {
                 <li><a href="/index.html" class="link">Home</a></li>
                 <li><a href="/public/pages/posts.html" class="link">Posts</a></li>
                 <li><a href="/public/pages/contact.html" class="link">Contact</a></li>
-                <li><a href="#TO_BE_CHANGED" class="link">About</a></li>
+                <li><a href="/public/pages/about.html" class="link">About</a></li>
               </ul>
             </nav>
           `;
@@ -26,7 +26,7 @@ function makeNavbar() {
           </a>
             <ul class="navbar-links-desktop">
               <li><a href="/public/pages/contact.html">Contact</a></li>
-              <li><a href="#TO_BE_CHANGED">About</a></li>
+              <li><a href="/public/pages/about.html">About</a></li>
               <li><a href="/public/pages/posts.html" id="blog-button" >Posts</a></li>
             </ul>
           </nav>
