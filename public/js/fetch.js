@@ -29,6 +29,7 @@ function makePost(post) {
           />
           <section class="post-container">
             <h3 class="post-title">${post.acf.header}</h3>
+            <p class="post-status">${post.acf.status}</p>
             <p class="post-paragraph">
               ${post.acf.paragraph1}
             </p>

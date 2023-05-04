@@ -29,6 +29,7 @@ function makeAnimal(animal) {
     <article class="animal-wrapper">
         <a href="javascript:history.back()" class="back-button"> <img src="/public/svg/back.svg" alt=""/>Back</a>
         <h1>${animal.acf.header}</h1>
+        <p class="animal-status">${animal.acf.status}</p>
         <section class="animal-outer-container">
           <div class="animal-img-container">
               <img
@@ -92,6 +93,8 @@ function makeAnimal(animal) {
         </footer>
     </article>
     `;
+
+  getImages();
 }
 
 function backBtn() {
@@ -102,5 +105,27 @@ function backBtn() {
     } else {
       backBtn.classList.remove("back-button-visible");
     }
+  });
+}
+
+function getImages() {
+  const images = document.querySelectorAll(".animal-img");
+
+  images.forEach((image) => {
+    image.addEventListener("click", () => {
+      const overlay = document.createElement("div");
+      overlay.classList.add("overlay");
+
+      const overlayImage = document.createElement("img");
+      overlayImage.classList.add("overlay-image");
+      overlayImage.src = image.src;
+
+      overlay.appendChild(overlayImage);
+      document.body.appendChild(overlay);
+
+      overlay.addEventListener("click", () => {
+        overlay.remove();
+      });
+    });
   });
 }
