@@ -172,3 +172,12 @@ function searchPosts() {
     }
   });
 }
+
+// hide load more button if search input is not empty
+searchInput.addEventListener("keyup", () => {
+  if (searchInput.value !== "") {
+    loadMoreBtn.style.display = "none";
+  } else {
+    loadMoreBtn.style.display = "block";
+  }
+});
