@@ -2,11 +2,8 @@ const navbar = document.createElement("header");
 navbar.classList.add("navbar-container");
 document.body.prepend(navbar);
 
-let isOnMobile = false;
-
 function makeNavbar() {
   if (document.documentElement.clientWidth < 905) {
-    isOnMobile = true;
     navbar.innerHTML += `
           <nav class="navbar">
             <a href="/index.html" id="navbar-logo">
@@ -22,7 +19,6 @@ function makeNavbar() {
             </nav>
           `;
   } else {
-    isOnMobile = false;
     navbar.innerHTML += `
         <nav class="navbar">
           <a href="/index.html">
@@ -40,7 +36,7 @@ function makeNavbar() {
 
 makeNavbar();
 
-if (isOnMobile) {
+if (document.documentElement.clientWidth < 905) {
   const navbarMenu = document.querySelector("#navbar-menu");
   const navbarLinks = document.querySelector(".navbar-links-mobile");
 
