@@ -32,6 +32,11 @@
         list-style: none;
         flex: 1 1 320px;
         max-width: 432px;
+        transition: background-color 200ms ease;
+
+        &:hover {
+            background-color: adjust-color($color: a.$md-sys-color-tertiary-container-dark, $hue: 0, $saturation: 0%, $lightness: 2.5%, $alpha: 1.0);
+        }
         
         a {
             text-decoration: none;

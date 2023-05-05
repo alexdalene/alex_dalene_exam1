@@ -4,37 +4,40 @@
     display: flex;
     flex-direction: column;
     gap: 8rem;
-    min-height: 100lvh;
-
-    @include a.respond-to('medium') {
-        flex-direction: row;
-        gap: 1.6rem;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
     margin-inline: a.$md-sys-margin-default;
-    flex: 1;
+    margin-bottom: 3.6rem;
 
     @include a.respond-to('small') {
         margin-inline: a.$md-sys-margin-small;
     }
 
     @include a.respond-to('medium') {
-        margin-left: a.$md-sys-margin-medium;
+        height: calc(100lvh - 8.2rem);
+        margin-inline: a.$md-sys-margin-medium;
+        flex-direction: row;
+        gap: 3.6rem;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
     }
 
     @include a.respond-to('large') {
-        margin-left: a.$md-sys-margin-large;
+        margin-inline: a.$md-sys-margin-large;
     }
 
     @include a.respond-to('x-large') {
-        margin-left: a.$md-sys-margin-x-large;
+        margin-inline: a.$md-sys-margin-x-large;
     }
+
+    @include a.respond-to('medium') {
+    }
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 624px;
 
     .contact-title {
         font-size: 3.2rem;
@@ -42,12 +45,14 @@
         font-weight: 400;
         line-height: 1.15;
         margin-block: 2.4rem;
+        width: fit-content;
     }
 
     .contact-form {
         display: flex;
         flex-direction: column;
         gap: 1.6rem;
+        max-width: 824px;
 
         label {
             display: none;
@@ -124,7 +129,6 @@
 .thank-you {
     display: flex;
     flex-direction: column;
-    margin-inline: a.$md-sys-margin-default;
     gap: 1.6rem;
     background-color: a.$md-sys-color-secondary-dark;
     color: a.$md-sys-color-on-secondary-dark;
@@ -132,22 +136,8 @@
     border-radius: a.$md-sys-radius-defalt;
     flex: 1;
     height: fit-content;
-
-    @include a.respond-to('small') {
-        margin-inline: a.$md-sys-margin-small;
-    }
-
-    @include a.respond-to('medium') {
-        margin-right: a.$md-sys-margin-medium;
-    }
-
-    @include a.respond-to('large') {
-        margin-right: a.$md-sys-margin-large;
-    }
-
-    @include a.respond-to('x-large') {
-        margin-right: a.$md-sys-margin-x-large;
-    }
+    max-width: 524px;
+    min-width: 300px;
 
     h2 {
         font-size: 3.2rem;

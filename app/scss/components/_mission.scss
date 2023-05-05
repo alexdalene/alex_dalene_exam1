@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: column;
     margin-inline: a.$md-sys-margin-default;
+    max-width: 824px;
+    align-self: center;
 
     @include a.respond-to('small') {
         margin-inline: a.$md-sys-margin-small;

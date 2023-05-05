@@ -77,3 +77,17 @@ function searchPost(post) {
     }
   });
 }
+
+// close the search results container when scrolling
+window.addEventListener("scroll", () => {
+  searchContainer.classList.remove("show");
+  searchResults = []; // clear the searchResults array
+});
+
+// close the search results container when clicking outside of it
+window.addEventListener("click", (e) => {
+  if (!searchContainer.contains(e.target) && e.target !== searchInput) {
+    searchContainer.classList.remove("show");
+    searchResults = []; // clear the searchResults array
+  }
+});

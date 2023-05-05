@@ -3,14 +3,13 @@
 .about-container {
     display: flex;
     flex-direction: column;
-    margin-top: 1.6rem;
     margin-inline: a.$md-sys-margin-default;
     align-items: center;
     justify-content: center;
-    min-height: 100lvh;
 
     @include a.respond-to('small') {
         margin-inline: a.$md-sys-margin-small;
+        height: calc(100lvh - 8.2rem);
     }
 
     @include a.respond-to('medium') {
@@ -30,12 +29,13 @@
         flex-direction: column;
         gap: 1.6rem;
         padding: 2.4rem;
-        width: clamp(300px, 100%, 824px);
+        max-width: 524px;
 
         &:nth-child(1) {
             background-color: a.$md-sys-color-secondary-container-dark;
             color: a.$md-sys-color-on-secondary-container-dark;
             border-radius: a.$md-sys-radius-defalt a.$md-sys-radius-defalt 0 0;
+            margin-top: 3.6rem;
 
             h1 {
                 font-size: 3.2rem;
@@ -51,6 +51,8 @@
         &:nth-child(2) {
             background-color: a.$md-sys-color-secondary-dark;
             color: a.$md-sys-color-on-secondary-dark;
+            border-radius: 0 0 a.$md-sys-radius-defalt a.$md-sys-radius-defalt;
+            margin-bottom: 3.6rem;
 
             h2 {
                 font-size: 3.2rem;
@@ -61,40 +63,6 @@
             p {
                 font-size: 2rem;
                 font-weight: 400;
-            }
-        }
-
-        &:nth-child(3) {
-            background-color: a.$md-sys-color-secondary-container-dark;
-            color: a.$md-sys-color-on-secondary-container-dark;
-            border-radius: 0 0 a.$md-sys-radius-defalt a.$md-sys-radius-defalt;
-
-            h2 {
-                font-size: 3.2rem;
-                font-family: a.$md-sys-font-quicksand;
-                font-weight: 400;
-            }
-
-            ul {
-                display: flex;
-                gap: 1.6rem;
-                list-style: none;
-                padding-inline-start: 0;
-                flex-wrap: wrap;
-
-                li {
-                    font-size: 2rem;
-                    padding: 1.2rem 1.6rem;
-                    border-radius: a.$md-sys-radius-defalt;
-                    background-color: a.$md-sys-color-on-secondary-container-dark;
-                    text-align: center;
-                    color: a.$md-sys-color-secondary-container-dark;
-                    width: 100%;
-
-                    @include a.respond-to('small') {
-                        width: fit-content;
-                    }
-                }
             }
         }
     }

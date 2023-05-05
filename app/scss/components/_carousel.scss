@@ -1,6 +1,10 @@
 @use "../abstracts/" as a;
 
 .carousel-main-container {
+    @include a.respond-to('x-large') {
+        margin-right: a.$md-sys-margin-x-large;
+    }
+
     .nav-carousel {
         display: flex;
         justify-content: space-between;

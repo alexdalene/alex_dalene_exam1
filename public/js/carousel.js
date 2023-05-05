@@ -10,10 +10,10 @@ function scrollProgressBar() {
   const progressFill = document.querySelector(".progress-fill");
 
   let scrollDistance = carouselContainer.scrollLeft;
-  let progressPercentage =
-    (scrollDistance /
-      (carouselContainer.scrollWidth - document.documentElement.clientWidth)) *
-    100;
+  let scrollWidth = carouselContainer.scrollWidth;
+  let clientWidth = carouselContainer.clientWidth;
+
+  let progressPercentage = (scrollDistance / (scrollWidth - clientWidth)) * 100;
 
   let val = Math.floor(progressPercentage);
   progressFill.style.width = val + "%";
@@ -41,14 +41,14 @@ carouselContainer.addEventListener("scroll", scrollProgressBar);
 
 // scroll left
 function scrollLeft() {
-  carouselContainer.scrollLeft -= 308;
+  carouselContainer.scrollLeft -= 316;
 }
 
 scrollButtonLeft.addEventListener("click", scrollLeft);
 
 // scroll right
 function scrollRight() {
-  carouselContainer.scrollLeft += 308;
+  carouselContainer.scrollLeft += 316;
 }
 
 scrollButtonRight.addEventListener("click", scrollRight);

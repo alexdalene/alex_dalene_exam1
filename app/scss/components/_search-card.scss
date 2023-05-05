@@ -2,7 +2,6 @@
 
 .search-header {
     display: flex;
-    margin-inline: a.$md-sys-margin-default;
     justify-content: flex-end;
     align-items: center;
     height: 20rem;
@@ -13,23 +12,26 @@
     background-position: center;
     padding-bottom: 3rem;
     flex-direction: column;
+    align-self: center;
+    width: calc(100% - 2 * a.$md-sys-margin-default);
+    max-width: 824px;
 
     @include a.respond-to('small') {
-        margin-inline: a.$md-sys-margin-small;
+        width: calc(100% - 2 * a.$md-sys-margin-small);
     }
 
     @include a.respond-to('medium') {
-        margin-inline: a.$md-sys-margin-medium;
+        width: calc(100% - 2 * a.$md-sys-margin-medium);
         height: 30rem;
         padding-bottom: 6rem;
     }
 
     @include a.respond-to('large') {
-        margin-inline: a.$md-sys-margin-large;
+        width: calc(100% - 2 * a.$md-sys-margin-large);
     }
 
     @include a.respond-to('x-large') {
-        margin-inline: a.$md-sys-margin-x-large;
+        width: calc(100% - 2 * a.$md-sys-margin-x-large);
     }
 
     input {
@@ -80,13 +82,32 @@
 }
 
 .search-results {
-    margin-inline: a.$md-sys-margin-default;
-    padding: 1.6rem 0;
+    padding: 1.6rem;
     flex-direction: column;
     gap: 0.8rem;
     display: none;
-    margin-top: -8rem;
-    border-bottom: 1px solid a.$md-sys-color-outline-dark;
+    position: fixed;
+    background-color: a.$md-sys-color-background-dark;
+    border-radius: a.$md-sys-radius-defalt;
+    z-index: 2;
+    overflow-y: scroll;
+    max-height: 25vh;
+    scroll-behavior: smooth;
+    scroll-snap-align: start;
+    scrollbar-width: none;
+    align-self: center;
+    width: calc(100% - 2 * a.$md-sys-margin-default);
+    max-width: 440px;
+    box-shadow: a.$md-sys-shadow-0;
+    top: 280px;
+
+    @include a.respond-to('medium') {
+        top: 350px;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     @include a.respond-to('small') {
         margin-inline: a.$md-sys-margin-small;
@@ -108,8 +129,9 @@
         list-style: none;
         background-color: a.$md-sys-color-tertiary-container-dark;
         border-radius: a.$md-sys-radius-small;
-        width: clamp(20rem, 100%, 60rem);
         margin: 0 auto;
+        max-width: 340px;
+        width: 100%;
 
         a {
             text-decoration: none;
