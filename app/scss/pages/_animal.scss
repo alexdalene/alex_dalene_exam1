@@ -63,11 +63,22 @@
             opacity: 1;
         }
 
+        .animal-photographer {
+            font-size: 1.2rem;
+            margin-bottom: -1.6rem;
+            font-weight: 200;
+            color: a.$md-sys-color-on-surface-variant-dark;
+
+            @include a.respond-to('medium') {
+                font-size: 1.6rem;
+            }
+        }
+
         h1 {
             font-size: 3.2rem;
             font-family: a.$md-sys-font-quicksand;
             font-weight: 400;
-            margin-bottom: -1.6rem;
+            margin-bottom: -2.6rem;
 
             @include a.respond-to('small') {
                 font-size: 4.6rem;

@@ -184,7 +184,7 @@
                 transition: all 200ms ease;
 
                 &:is(:hover) {
-                    background-color: a.$md-sys-color-primary-dark;
+                    background-color: adjust-color($color: a.$md-sys-color-on-tertiary-container-dark, $hue: 0, $saturation: 0%, $lightness: 5%, $alpha: 1.0);
                     color: a.$md-sys-color-on-primary-dark;
                 }
             }

@@ -30,6 +30,7 @@ function makeAnimal(animal) {
         <a href="javascript:history.back()" class="back-button"> <img src="/public/svg/back.svg" alt=""/>Back</a>
         <h1>${animal.acf.header}</h1>
         <p class="animal-status">${animal.acf.status}</p>
+        <p class="animal-photographer">Images taken by: ${animal.acf.photographer}</p>
         <section class="animal-outer-container">
           <div class="animal-img-container">
               <img
@@ -93,6 +94,11 @@ function makeAnimal(animal) {
         </footer>
     </article>
     `;
+
+  // remove photographer if empty
+  if (animal.acf.photographer == "") {
+    document.querySelector(".animal-photographer").remove();
+  }
 
   getImages();
 }
