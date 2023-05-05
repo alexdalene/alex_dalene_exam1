@@ -4,8 +4,6 @@ document.body.prepend(navbar);
 
 let isOnMobile = false;
 
-makeNavbar();
-
 function makeNavbar() {
   if (document.documentElement.clientWidth < 905) {
     isOnMobile = true;
@@ -39,6 +37,8 @@ function makeNavbar() {
         `;
   }
 }
+
+makeNavbar();
 
 if (isOnMobile) {
   const navbarMenu = document.querySelector("#navbar-menu");
