@@ -21,7 +21,7 @@ function makeNavbar() {
               </ul>
             </nav>
           `;
-  } else if (document.documentElement.clientWidth >= 905) {
+  } else {
     isOnMobile = false;
     navbar.innerHTML += `
         <nav class="navbar">
