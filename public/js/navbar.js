@@ -36,47 +36,45 @@ function makeNavbar() {
 
 makeNavbar();
 
-if (document.documentElement.clientWidth < 905) {
-  const navbarMenu = document.querySelector("#navbar-menu");
-  const navbarLinks = document.querySelector(".navbar-links-mobile");
+const navbarMenu = document.querySelector("#navbar-menu");
+const navbarLinks = document.querySelector(".navbar-links-mobile");
 
-  let isOpen = false;
+let isOpen = false;
 
-  function openNavbar() {
-    if (isOpen) {
-      navbarLinks.setAttribute("isOpen", false);
-      navbarMenu.style.transform = "rotate(0deg)";
-      isOpen = false;
-    } else {
-      navbarLinks.setAttribute("isOpen", true);
-      navbarMenu.style.transform = "rotate(-90deg)";
-      isOpen = true;
-    }
+function openNavbar() {
+  if (isOpen) {
+    navbarLinks.setAttribute("isOpen", false);
+    navbarMenu.style.transform = "rotate(0deg)";
+    isOpen = false;
+  } else {
+    navbarLinks.setAttribute("isOpen", true);
+    navbarMenu.style.transform = "rotate(-90deg)";
+    isOpen = true;
   }
-
-  navbarMenu.addEventListener("click", openNavbar);
-
-  // the observer
-  const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
-    },
-    observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("link-animation");
-        } else {
-          entry.target.classList.remove("link-animation");
-        }
-      });
-    }, options);
-
-  // the targets
-  const targets = document.querySelectorAll(".link");
-
-  // the observer is observing the targets
-  targets.forEach((target) => {
-    observer.observe(target);
-  });
 }
+
+navbarMenu.addEventListener("click", openNavbar);
+
+// the observer
+const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  },
+  observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("link-animation");
+      } else {
+        entry.target.classList.remove("link-animation");
+      }
+    });
+  }, options);
+
+// the targets
+const targets = document.querySelectorAll(".link");
+
+// the observer is observing the targets
+targets.forEach((target) => {
+  observer.observe(target);
+});
