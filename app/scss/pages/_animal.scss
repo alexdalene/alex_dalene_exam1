@@ -414,6 +414,12 @@
         background: rgba($color: #000000, $alpha: 0.4);
         backdrop-filter: blur(20px);
         --webkit-backdrop-filter: blur(20px);
+        --backdrop-filter: blur(20px);
+
+        // blur fix for safari
+        @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+            background: rgba($color: #000000, $alpha: 0.8);
+        }
     }
 
     .overlay-image {
