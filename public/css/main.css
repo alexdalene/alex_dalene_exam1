@@ -1135,12 +1135,6 @@ html {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(20px);
   --webkit-backdrop-filter: blur(20px);
-  --backdrop-filter: blur(20px);
-}
-@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-  .overlay .overlay-blur {
-    background: rgba(0, 0, 0, 0.8);
-  }
 }
 .overlay .overlay-image {
   width: 100%;
