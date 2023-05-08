@@ -5,11 +5,6 @@ const subject = document.querySelector("#subject");
 const message = document.querySelector("#message");
 const submitBtn = document.querySelector(".contact-button");
 
-// disable default form behavior
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
-
 // regex for name, at least 6 characters and only letters allowed and spaces
 const nameRegex = /^[a-zA-Z ]{6,}$/;
 // regex for email, must contain @ and .
@@ -75,4 +70,41 @@ form.addEventListener("keyup", () => {
   } else {
     submitBtn.disabled = true;
   }
+});
+
+// submit form to WordPress REST API
+$(document).ready(function () {
+  $(form).submit(function (e) {
+    e.preventDefault(); // prevent the form from submitting normally
+
+    // capture the form data
+    var formData = {
+      title: $(subject).val(),
+      content:
+        $(message).val() + "\n\n" + $(name).val() + "\n" + $(email).val(),
+      status: "publish",
+    };
+
+    let login = "wildatrisk.dalene.digital";
+    let password = "M8a7 t39g mOLY VioF 73h0 L2hc";
+
+    let authHeader = "Basic " + btoa(login + ":" + password);
+
+    // send an AJAX request to the WordPress REST API with JWT authentication
+    $.ajax({
+      method: "POST",
+      url: "https://wildatrisk.dalene.digital/wp-json/wp/v2/contact_form",
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader("Authorization", authHeader);
+      },
+      data: JSON.stringify(formData),
+      contentType: "application/json",
+      success: function (data) {
+        console.log("Post created:", data);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.error("Error creating post:", errorThrown);
+      },
+    });
+  });
 });

@@ -870,6 +870,7 @@ html {
   gap: 0.4rem;
   flex: 3;
   max-width: 586px;
+  max-height: 785px;
 }
 .animal-container .animal-wrapper .animal-img-container .animal-img {
   width: 100%;
@@ -994,6 +995,118 @@ html {
   .animal-container .animal-wrapper .animal-footer {
     font-size: 1.6rem;
   }
+}
+.animal-container .animal-wrapper .comment-container {
+  background-color: #4b4639;
+  padding: 2.4rem;
+  max-width: 586px;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.animal-container .animal-wrapper .comment-container .comment-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  font-family: "Quicksand";
+}
+.animal-container .animal-wrapper .comment-container .no-comments {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.animal-container .animal-wrapper .comment-container .comment {
+  display: flex;
+  flex-direction: column;
+  background-color: #cdc6b4;
+  border-radius: 2rem;
+  color: #4b4639;
+  padding: 1.6rem;
+}
+.animal-container .animal-wrapper .comment-container .comment .comment-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+.animal-container .animal-wrapper .comment-container .comment .comment-header .comment-avatar {
+  aspect-ratio: 1/1;
+  width: 4rem;
+  object-fit: cover;
+  object-position: center;
+}
+.animal-container .animal-wrapper .comment-container .comment .comment-header .comment-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.animal-container .animal-wrapper .comment-container .comment .comment-header .comment-date {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.animal-container .animal-wrapper .comment-container .comment p {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.animal-container .animal-wrapper .comment-container .comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container label {
+  display: none;
+}
+.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container input, .animal-container .animal-wrapper .comment-container .comment-form .comment-form-container textarea {
+  font-size: 1.6rem;
+  outline: none;
+  border: none;
+  background-color: #2C2A24;
+  border-bottom: 1px solid #979080;
+  font-weight: 400;
+  padding: 0.8rem;
+  font-family: "Quicksand";
+  color: #e8e2d9;
+  transition: border-bottom 0.2s ease-in-out;
+  width: 100%;
+  max-width: 30rem;
+  border-radius: 0px;
+}
+.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container input::placeholder, .animal-container .animal-wrapper .comment-container .comment-form .comment-form-container textarea::placeholder {
+  color: #cdc6b4;
+  font-weight: 400;
+}
+.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container input:is(:focus, :hover, :focus-visible), .animal-container .animal-wrapper .comment-container .comment-form .comment-form-container textarea:is(:focus, :hover, :focus-visible) {
+  background-color: #33312a;
+}
+.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container textarea {
+  height: 12rem;
+  min-width: 100%;
+}
+.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container .valid {
+  border-bottom: 1px solid #e8c41c;
+}
+.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container .invalid {
+  border-bottom: 1px solid #ffb4ab;
+}
+.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container .comment-form-submit {
+  background-color: #e8c41c;
+  color: #3a3000;
+  padding: 1.2rem 1.6rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 1.6rem;
+  width: 15rem;
+  align-self: flex-end;
+  transition: background-color 200ms ease-in-out;
+}
+.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container .comment-form-submit:disabled {
+  background-color: #544600;
+  cursor: not-allowed;
 }
 
 .overlay {
@@ -1269,6 +1382,7 @@ html {
   font-family: "Quicksand";
   color: #e8e2d9;
   transition: border-bottom 0.2s ease-in-out;
+  border-radius: 0px;
 }
 .contact-info .contact-form input::placeholder, .contact-info .contact-form textarea::placeholder {
   color: #cdc6b4;
@@ -1293,15 +1407,12 @@ html {
 .contact-info .contact-form .contact-button {
   background-color: #e8c41c;
   color: #3a3000;
-  font-size: 1.6rem;
-  font-weight: 700;
   padding: 1.2rem 1.6rem;
   border-radius: 3rem;
   cursor: pointer;
   outline: none;
   border: none;
   font-size: 2rem;
-  font-weight: 400;
   width: 15rem;
   align-self: flex-end;
   transition: background-color 200ms ease-in-out;

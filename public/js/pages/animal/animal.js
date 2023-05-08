@@ -9,8 +9,8 @@ async function getAnimal() {
   );
   const result = await response.json();
   makeAnimal(result);
-  console.log(result);
   backBtn();
+  getComments();
 }
 
 getAnimal();
@@ -21,7 +21,7 @@ function makeAnimal(animal) {
 
   // change meta desc based on animal
   const metaDesc = document.querySelector('meta[name="description"]');
-  metaDesc.setAttribute("content", animal.acf.paragraphTop);
+  metaDesc.setAttribute("content", animal.acf.paragraph1);
 
   const animalContainer = document.querySelector(".animal-container");
 
@@ -117,7 +117,6 @@ function backBtn() {
 // click on image to open modal with gallery of images from animal
 function getImages() {
   const images = document.querySelectorAll(".animal-img");
-  console.log(images);
 
   images.forEach((image) => {
     image.addEventListener("click", () => {

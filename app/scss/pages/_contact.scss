@@ -70,6 +70,7 @@
             font-family: a.$md-sys-font-quicksand;
             color: a.$md-sys-color-on-surface-dark;
             transition: border-bottom 0.2s ease-in-out;
+            border-radius: 0px;
 
             &::placeholder {
                 color: a.$md-sys-color-on-surface-variant-dark;
@@ -105,15 +106,12 @@
         .contact-button {
             background-color: a.$md-sys-color-primary-dark;
             color: a.$md-sys-color-on-primary-dark;
-            font-size: 1.6rem;
-            font-weight: 700;
             padding: 1.2rem 1.6rem;
             border-radius: a.$md-sys-radius-defalt;
             cursor: pointer;
             outline: none;
             border: none;
             font-size: 2rem;
-            font-weight: 400;
             width: 15rem;
             align-self: flex-end;
             transition: background-color 200ms ease-in-out;
