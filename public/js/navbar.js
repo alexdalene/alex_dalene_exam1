@@ -48,11 +48,11 @@ function mobileNavbar() {
   function openNavbar() {
     if (isOpen) {
       navbarLinks.setAttribute("isOpen", false);
-      navbarMenu.style.transform = "rotate(0deg)";
+      navbarMenu.classList.remove("rotate");
       isOpen = false;
     } else {
       navbarLinks.setAttribute("isOpen", true);
-      navbarMenu.style.transform = "rotate(-90deg)";
+      navbarMenu.classList.add("rotate");
       isOpen = true;
     }
   }

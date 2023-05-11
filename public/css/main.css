@@ -1556,7 +1556,7 @@ html {
   z-index: 99;
 }
 .navbar-container .navbar .rotate {
-  rotate: 180deg;
+  rotate: -90deg;
   transition: rotate 400ms ease-out;
 }
 .navbar-container .navbar .navbar-links-mobile {
