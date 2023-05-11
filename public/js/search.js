@@ -12,7 +12,7 @@ searchIndex();
 
 const searchInput = document.querySelector("#search-input");
 const searchContainer = document.querySelector(".search-results");
-let searchResults = []; // initialize an empty array to store the search results
+let searchResults = []; // initialize an empty array to store the search results otherwise the search results will be duplicated
 
 function searchPost(post) {
   searchInput.addEventListener("keyup", (e) => {

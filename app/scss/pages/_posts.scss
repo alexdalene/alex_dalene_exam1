@@ -1,6 +1,5 @@
 @use "../abstracts/" as a;
 
-
 .posts-container {
     display: flex;
     gap: 1.6rem;
@@ -47,11 +46,11 @@
 .options {
     display: flex;
     justify-content: space-between;
-    position: sticky;
-    top: 80px;
     padding: 1.6rem;
     background-color: a.$md-sys-color-background-dark;
     align-items: center;
+    margin-bottom: 2.4rem;
+    box-shadow: a.$md-sys-shadow-0;
 
     @include a.respond-to('small') {
         padding-inline: a.$md-sys-margin-small;

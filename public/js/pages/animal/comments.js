@@ -13,6 +13,7 @@ function makeComments(comments) {
   commentContainer.innerHTML = "<h3 class='comment-title'>Comments</h3>";
   document.querySelector(".animal-wrapper").appendChild(commentContainer);
 
+  // make date a readable format
   comments.forEach((comment) => {
     let date = new Date(comment.date).toLocaleDateString("en-US", {
       year: "numeric",

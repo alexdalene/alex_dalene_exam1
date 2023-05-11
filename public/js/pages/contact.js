@@ -90,7 +90,7 @@ $(document).ready(function () {
 
     let authHeader = "Basic " + btoa(login + ":" + password);
 
-    // send an AJAX request to the WordPress REST API with JWT authentication
+    // send an AJAX request to the WordPress REST API with authentication
     $.ajax({
       method: "POST",
       url: "https://wildatrisk.dalene.digital/wp-json/wp/v2/contact_form",
