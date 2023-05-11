@@ -1135,7 +1135,7 @@ html {
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(20px);
-  --webkit-backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 .overlay .overlay-image {
   width: 100%;
