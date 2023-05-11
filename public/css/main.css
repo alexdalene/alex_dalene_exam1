@@ -1573,8 +1573,7 @@ html {
   padding: 0;
   z-index: 98;
   background-color: #1d1b16;
-  transition: all 600ms ease;
-  gap: 1.6rem;
+  transition: transform 600ms ease;
 }
 .navbar-container .navbar .navbar-links-mobile[isopen=false] {
   transform: translateY(-100%);
@@ -1589,18 +1588,10 @@ html {
   font-weight: 400;
   font-size: 3.6rem;
   opacity: 0;
+  transition: opacity 400ms ease-in-out;
 }
 .navbar-container .navbar .navbar-links-mobile .link-animation {
-  animation: fadeIn 400ms ease-in-out forwards;
-  animation-delay: 200ms;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  opacity: 1;
 }
 .navbar-container .navbar .navbar-links-desktop {
   display: flex;
