@@ -33,7 +33,7 @@
 
         #navbar-menu {
             z-index: 99;
-            transition: all 400ms ease-in;
+            transition: transform 400ms ease-out;
         }
 
         #navbar-logo {
@@ -41,8 +41,7 @@
         }
 
         .rotate {
-            rotate: -90deg;
-            transition: rotate 400ms ease-out;
+            transform: rotate(-90deg);
         }
 
         .navbar-links-mobile {
