@@ -401,8 +401,9 @@
     justify-content: center;
     gap: 3.6rem;
     flex-direction: column;
-    object-fit: cover;
-    object-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
     .overlay-blur {
         position: absolute;
