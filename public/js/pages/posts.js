@@ -1,14 +1,12 @@
 async function getPosts() {
+  document.querySelector(".loader").style.display = "block";
   const response = await fetch(
     "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal?_embed&per_page=100"
   );
   const result = await response.json();
-  // result.forEach((result) => {
-  //   console.log(result);
-  // });
+  document.querySelector(".loader").style.display = "none";
 
   makePost(result);
-  console.log(result);
 }
 
 getPosts();
@@ -39,13 +37,10 @@ function makePost(post) {
     index++;
   }
 
-  console.log(index);
-
   // display posts if index is less than or equal to 10
   for (let i = 0; i < index; i++) {
     // check if post[i] is true, if not then break the loop
     if (post[i]) {
-      console.log(post[i]);
       postContainer.innerHTML += `
           <li class="carousel">
             <a href="/public/pages/animal.html?id=${post[i].id}">
@@ -107,6 +102,12 @@ loadMoreBtn.addEventListener("click", () => {
     document.querySelector(
       ".carousel:nth-child(" + (i + 1) + ")"
     ).style.display = "block";
+  }
+
+  if (index >= postsArray.length) {
+    loadMoreBtn.style.display = "none";
+  } else {
+    loadMoreBtn.style.display = "block";
   }
 });
 
@@ -181,3 +182,5 @@ searchInput.addEventListener("keyup", () => {
     loadMoreBtn.style.display = "block";
   }
 });
+
+// hide load more button if there are no more posts to show

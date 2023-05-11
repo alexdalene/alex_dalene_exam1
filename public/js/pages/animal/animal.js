@@ -141,7 +141,7 @@ function getImages() {
       document.body.appendChild(overlay);
 
       // close overlay
-      overlayClose.addEventListener("click", () => {
+      overlay.addEventListener("click", () => {
         overlay.remove();
       });
 
