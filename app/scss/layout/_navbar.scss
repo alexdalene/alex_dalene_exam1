@@ -24,7 +24,6 @@
         padding-inline: a.$md-sys-margin-x-large;
     }
 
-
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -48,15 +47,14 @@
             position: fixed;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-start;
+            align-items: flex-end;
             list-style: none;
-            left: 0;
-            top: 0;
+            inset: 0;
             width: 100%;
-            height: 100lvh;
+            height: 100%;
             margin: 0;
-            padding: 0;
+            padding: 10rem 1.6rem;
             z-index: 98;
             background-color: a.$md-sys-color-background-dark;
             transition: transform 600ms ease;
@@ -74,7 +72,7 @@
                 text-decoration: none;
                 font-family: a.$md-sys-font-quicksand;
                 font-weight: 400;
-                font-size: 3.6rem;
+                font-size: a.$md-sys-font-size-x-large;
                 opacity: 0;
                 transition: opacity 400ms ease-in-out;
             }
@@ -87,12 +85,12 @@
         .navbar-links-desktop {
             display: flex;
             list-style: none;
-            gap: 2.4rem;
+            gap: a.$md-sys-gap-default;
 
             li > a {
                 color: a.$md-sys-color-on-background-dark;
                 font-family: a.$md-sys-font-quicksand;
-                font-size: 2rem;
+                font-size: a.$md-sys-font-size-large;
                 text-decoration: none;
                 transition: color 200ms ease-in-out;
 

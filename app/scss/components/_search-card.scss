@@ -2,8 +2,8 @@
 
 .search-header {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
     height: 20rem;
     border-radius: a.$md-sys-radius-defalt;
     background-color: a.$md-sys-color-on-background-dark;
@@ -11,10 +11,9 @@
     background-size: cover;
     background-position: center;
     padding-bottom: 3rem;
-    flex-direction: column;
     align-self: center;
     width: calc(100% - 2 * a.$md-sys-margin-default);
-    max-width: 824px;
+    max-width: a.$md-sys-width-default;
 
     @include a.respond-to('small') {
         width: calc(100% - 2 * a.$md-sys-margin-small);
@@ -34,30 +33,44 @@
         width: calc(100% - 2 * a.$md-sys-margin-x-large);
     }
 
+    .search-content {
+        display: flex;
+        align-items: center;
+        gap: a.$md-sys-gap-small;
+    }
+
+    .search-input-icon {
+        filter: invert(1);
+        aspect-ratio: 1/1;
+        width: 3rem;
+    }
+
     input {
         border: none;
         outline: none;
-        border-radius: 1.5rem;
+        border-radius: a.$md-sys-radius-small;
         height: 4.5rem;
         width: 20rem;
         background-color: a.$md-sys-color-on-background-dark;
         display: flex;
-        text-align: center;
-        font-size: 16px;
-        color: a.$md-sys-color-surface-variant-dark;
+        font-size: a.$md-sys-font-size-small;
+        color: a.$md-sys-color-surface-dark;
         box-shadow: a.$md-sys-shadow-0;
         transition: width 200ms ease;
+        padding: 0 1.6rem;
 
         &::placeholder {
             color: a.$md-sys-color-surface-variant-dark;
-            font-size: 16px;
-            text-align: center;
+            font-size: a.$md-sys-font-size-small;
+        }
+
+        &:hover {
+            box-shadow: a.$md-sys-shadow-1;
         }
 
         &:focus {
             box-shadow: a.$md-sys-shadow-1;
             width: calc(20rem + 2.5rem);
-            transition: width 200ms ease;
         }
 
         &:focus::placeholder {
@@ -67,15 +80,14 @@
         @include a.respond-to('medium') {
             width: 30rem;
             height: 5rem;
-            font-size: 20px;
+            font-size: a.$md-sys-font-size-default;
 
             &::placeholder {
-                font-size: 20px;
+                font-size: a.$md-sys-font-size-default;
             }
 
             &:focus {
-                width: calc(30rem + 2.5rem);
-                transition: width 200ms ease;
+                width: calc(30rem + 3.5rem);
             }
         }
     }

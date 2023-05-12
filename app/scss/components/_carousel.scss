@@ -24,7 +24,8 @@
         }
     
         @include a.respond-to('x-large') {
-            margin-inline: a.$md-sys-margin-x-large;
+            margin-left: a.$md-sys-margin-x-large;
+            margin-right: 0;
         }
 
         .title-carousel {

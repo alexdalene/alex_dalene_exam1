@@ -37,7 +37,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 2.4rem;
+        gap: a.$md-sys-gap-default;
         color: a.$md-sys-color-on-secondary-dark;
         max-width: 30rem;
 
@@ -71,10 +71,10 @@
         .info-right {
             display: flex;
             flex-direction: column;
-            gap: 2.4rem;
+            gap: a.$md-sys-gap-small;
     
             .paragraph-header {
-                font-size: 20px;
+                font-size: a.$md-sys-font-size-default;
                 line-height: 1.15;
                 align-self: flex-start;
 
