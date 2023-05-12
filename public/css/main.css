@@ -1424,6 +1424,41 @@ html {
     margin-inline: 30rem;
   }
 }
+.contact-container .contact-success {
+  position: fixed;
+  width: 100lvw;
+  height: 100lvh;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.contact-container .contact-success div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d4e37;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3rem;
+  color: #c6eccd;
+  gap: 1.6rem;
+  padding: 3.6rem;
+  z-index: 101;
+  margin-inline: 1.6rem;
+}
+.contact-container .contact-success div h2 {
+  font-size: 2.4rem;
+  font-family: "Quicksand";
+}
+.contact-container .contact-success div p {
+  font-size: 1.6rem;
+}
+
 .contact-info {
   display: flex;
   flex-direction: column;

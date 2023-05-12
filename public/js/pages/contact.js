@@ -72,6 +72,8 @@ form.addEventListener("keyup", () => {
   }
 });
 
+document.querySelector(".contact-success").style.display = "none";
+
 // submit form to WordPress REST API
 $(document).ready(function () {
   $(form).submit(function (e) {
@@ -101,6 +103,20 @@ $(document).ready(function () {
       contentType: "application/json",
       success: function (data) {
         console.log("Post created:", data);
+
+        // reset the form
+        $(form).trigger("reset");
+        $(name).removeClass("valid");
+        $(email).removeClass("valid");
+        $(subject).removeClass("valid");
+        $(message).removeClass("valid");
+        submitBtn.disabled = true;
+
+        // show success message
+        $(".contact-success").show();
+        setTimeout(function () {
+          $(".contact-success").fadeOut();
+        }, 5000);
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.error("Error creating post:", errorThrown);
