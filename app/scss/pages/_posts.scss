@@ -1,11 +1,7 @@
 @use "../abstracts/" as a;
 
 .posts-container {
-    // display: flex;
-    // gap: 1.6rem;
     margin-inline: a.$md-sys-margin-default;
-    // flex-wrap: wrap;
-    // justify-content: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.6rem;
