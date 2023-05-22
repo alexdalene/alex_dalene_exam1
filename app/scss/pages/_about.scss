@@ -6,10 +6,10 @@
     margin-inline: a.$md-sys-margin-default;
     align-items: center;
     justify-content: center;
+    min-height: calc(100vh - 88px);
 
     @include a.respond-to('small') {
         margin-inline: a.$md-sys-margin-small;
-        height: calc(100lvh - 8.2rem);
     }
 
     @include a.respond-to('medium') {
@@ -35,7 +35,7 @@
             background-color: a.$md-sys-color-secondary-container-dark;
             color: a.$md-sys-color-on-secondary-container-dark;
             border-radius: a.$md-sys-radius-defalt a.$md-sys-radius-defalt 0 0;
-            margin-top: 3.6rem;
+            margin-top: a.$md-sys-margin-default;
 
             h1 {
                 font-size: 3.2rem;
@@ -52,7 +52,6 @@
             background-color: a.$md-sys-color-secondary-dark;
             color: a.$md-sys-color-on-secondary-dark;
             border-radius: 0 0 a.$md-sys-radius-defalt a.$md-sys-radius-defalt;
-            margin-bottom: 3.6rem;
 
             h2 {
                 font-size: 3.2rem;

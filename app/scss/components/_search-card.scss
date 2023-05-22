@@ -111,7 +111,7 @@
     width: calc(100% - 2 * a.$md-sys-margin-default);
     max-width: 440px;
     box-shadow: a.$md-sys-shadow-0;
-    top: 280px;
+    top: 300px;
 
     @include a.respond-to('medium') {
         top: 350px;

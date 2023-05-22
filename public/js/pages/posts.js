@@ -1,3 +1,5 @@
+const postContainer = document.querySelector(".posts-container");
+
 async function getPosts() {
   document.querySelector(".loader").style.display = "block";
   const response = await fetch(
@@ -11,12 +13,10 @@ async function getPosts() {
 
 getPosts();
 
-const postContainer = document.querySelector(".posts-container");
-
 // make post function
 function makePost(post) {
   // sort posts by date
-  post.sort((a, b) => {
+  const sortedPosts = post.sort((a, b) => {
     const aHeader = a.acf.header;
     const bHeader = b.acf.header;
 
@@ -29,20 +29,11 @@ function makePost(post) {
     }
   });
 
-  let index = 0;
-  const postsToShow = 10;
+  post = sortedPosts;
 
-  // count posts
-  for (let i = 0; i < post.length; i++) {
-    index++;
-  }
-
-  // display posts if index is less than or equal to 10
-  for (let i = 0; i < index; i++) {
-    // check if post[i] is true, if not then break the loop
-    if (post[i]) {
-      postContainer.innerHTML += `
-          <li class="carousel">
+  for (let i = 0; i <= 9; i++) {
+    postContainer.innerHTML += `
+    <li class="carousel">
             <a href="/public/pages/animal.html?id=${post[i].id}">
               <article class="post-wrapper">
                 <img
@@ -65,17 +56,9 @@ function makePost(post) {
             </a>
           </li>
           `;
-    } else {
-      break;
-    }
   }
 
-  // hide posts if index is more than 10
-  for (let i = postsToShow; i < index; i++) {
-    document.querySelector(
-      ".carousel:nth-child(" + (i + 1) + ")"
-    ).style.display = "none";
-  }
+  loadMore(post);
 }
 
 // load more button after posts
@@ -85,31 +68,44 @@ loadMoreBtn.textContent = "Load more";
 postContainer.after(loadMoreBtn);
 
 // load more button function
-loadMoreBtn.addEventListener("click", () => {
-  const posts = document.querySelectorAll(".carousel");
-  const postsArray = Array.from(posts);
-
-  let index = 0;
-  const postsToShow = 10;
-
-  // count posts
-  for (let i = 0; i < postsArray.length; i++) {
-    index++;
-  }
-
-  // display posts if index is more than 10
-  for (let i = postsToShow; i < index; i++) {
-    document.querySelector(
-      ".carousel:nth-child(" + (i + 1) + ")"
-    ).style.display = "block";
-  }
-
-  if (index >= postsArray.length) {
-    loadMoreBtn.style.display = "none";
-  } else {
-    loadMoreBtn.style.display = "block";
-  }
-});
+function loadMore(post) {
+  loadMoreBtn.addEventListener("click", () => {
+    for (let i = 10; i <= post.length; i++) {
+      // check if post[i] is true, if not then break the loop to prevent error
+      if (post[i]) {
+        postContainer.innerHTML += `
+        <li class="carousel">
+            <a href="/public/pages/animal.html?id=${post[i].id}">
+              <article class="post-wrapper">
+                <img
+                  src="${post[i].acf.url}"
+                  alt="${post[i].acf.alt}"
+                  class="post-img"
+                />
+                  <section class="post-container">
+                    <h3 class="post-title">${post[i].acf.header}</h3>
+                    <p class="post-status">${post[i].acf.status}</p>
+                    <p class="post-paragraph">
+                      ${post[i].acf.paragraph1}
+                    </p>
+                  </section>
+                  <footer class="post-footer">
+                    <p>${post[i].acf.author}</p>
+                    <p>${post[i].acf.date}</p>
+                  </footer>
+              </article>
+            </a>
+          </li>
+          `;
+      } else {
+        break;
+      }
+    }
+    loadMoreBtn.textContent = "No more animals :(";
+    loadMoreBtn.disabled = true;
+    loadMoreBtn.style.cursor = "default";
+  });
+}
 
 // disable default form behavior
 const form = document.querySelector(".options");

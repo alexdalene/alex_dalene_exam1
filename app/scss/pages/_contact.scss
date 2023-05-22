@@ -5,14 +5,13 @@
     flex-direction: column;
     gap: 8rem;
     margin-inline: a.$md-sys-margin-default;
-    margin-bottom: 3.6rem;
+    min-height: calc(100vh - 88px);
 
     @include a.respond-to('small') {
         margin-inline: a.$md-sys-margin-small;
     }
 
     @include a.respond-to('medium') {
-        height: calc(100lvh - 8.2rem);
         margin-inline: a.$md-sys-margin-medium;
         flex-direction: row;
         gap: 3.6rem;

@@ -1,11 +1,15 @@
 @use "../abstracts/" as a;
 
 .posts-container {
-    display: flex;
-    gap: 1.6rem;
+    // display: flex;
+    // gap: 1.6rem;
     margin-inline: a.$md-sys-margin-default;
-    flex-wrap: wrap;
-    justify-content: center;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.6rem;
+    place-items: center;
 
     @include a.respond-to('small') {
         margin-inline: a.$md-sys-margin-small;
@@ -154,8 +158,10 @@
     align-items: center;
     margin: a.$md-sys-margin-default;
     margin-inline: auto;
+    margin-top: 3.6rem;
     transition: background-color 200ms ease;
     height: 4.5rem;
+    cursor: pointer;
 
     &:is(:hover) {
         background-color: adjust-color($color: a.$md-sys-color-surface-variant-dark, $hue: 0, $saturation: 0%, $lightness: 2.5%, $alpha: 1.0);
