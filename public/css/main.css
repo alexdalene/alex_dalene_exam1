@@ -1119,6 +1119,12 @@ html {
   cursor: not-allowed;
 }
 
+.fun-fact {
+  display: block;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -1711,7 +1717,7 @@ html {
 .navbar-container .navbar .navbar-links-desktop li > a {
   color: #e8e2d9;
   font-family: "Quicksand";
-  font-size: 2.4rem;
+  font-size: 2rem;
   text-decoration: none;
   transition: color 200ms ease-in-out;
 }

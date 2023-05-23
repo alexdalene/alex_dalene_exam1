@@ -74,7 +74,7 @@ form.addEventListener("keyup", () => {
 
 document.querySelector(".contact-success").style.display = "none";
 
-// submit form to WordPress REST API
+// submit form to WordPress REST API, lots of help on this one
 $(document).ready(function () {
   $(form).submit(function (e) {
     e.preventDefault(); // prevent the form from submitting normally

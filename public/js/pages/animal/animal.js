@@ -80,7 +80,7 @@ function makeAnimal(animal) {
             <p class="animal-paragraph">
                 ${animal.acf.paragraph2}
             </p>
-            <p class="animal-callout">${animal.acf.callout}</p>
+            <p class="animal-callout"><span class="fun-fact">FUN FACT</span>${animal.acf.callout}</p>
             <p class="animal-paragraph">
             ${animal.acf.paragraph3}
             </p>
@@ -114,7 +114,7 @@ function backBtn() {
   });
 }
 
-// click on image to open modal with gallery of images from animal
+// click on image to open modal
 function getImages() {
   const images = document.querySelectorAll(".animal-img");
 
