@@ -195,6 +195,11 @@ function getImages() {
 
       // set background iomage to same as image clicked
       overlay.style.backgroundImage = `url(${image.src})`;
+
+      // prevent zoom on double tap
+      overlay.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+      });
     });
   });
 }
