@@ -335,7 +335,6 @@
                         color: a.$md-sys-color-on-surface-dark;
                         transition: border-bottom 0.2s ease-in-out;
                         width: 100%;
-                        max-width: 30rem;
                         border-radius: 0px;
 
             
@@ -461,6 +460,39 @@
         img {
             width: 2.4rem;
             height: 2.4rem;
+        }
+    }
+
+    .overlay-buttons-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 3.2rem;
+        padding-inline: 1.6rem;
+
+        button {
+            background-color: a.$md-sys-color-on-tertiary-container-dark;
+            color: a.$md-sys-color-tertiary-dark;
+            padding: 1.2rem;
+            border-radius: a.$md-sys-radius-defalt;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            transition: background-color 200ms ease-in-out;
+
+            img {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+
+        .overlay-prev {
+            transform: rotate(180deg);
+        }
+
+        .overlay-amount {
+            font-size: 1.6rem;
         }
     }
 }

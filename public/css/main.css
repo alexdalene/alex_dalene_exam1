@@ -1081,7 +1081,6 @@ html {
   color: #e8e2d9;
   transition: border-bottom 0.2s ease-in-out;
   width: 100%;
-  max-width: 30rem;
   border-radius: 0px;
 }
 .animal-container .animal-wrapper .comment-container .comment-form .comment-form-container input::placeholder, .animal-container .animal-wrapper .comment-container .comment-form .comment-form-container textarea::placeholder {
@@ -1191,6 +1190,34 @@ html {
 .overlay .overlay-close img {
   width: 2.4rem;
   height: 2.4rem;
+}
+.overlay .overlay-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 3.2rem;
+  padding-inline: 1.6rem;
+}
+.overlay .overlay-buttons-container button {
+  background-color: #c6eccd;
+  color: #aad0b2;
+  padding: 1.2rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: background-color 200ms ease-in-out;
+}
+.overlay .overlay-buttons-container button img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.overlay .overlay-buttons-container .overlay-prev {
+  transform: rotate(180deg);
+}
+.overlay .overlay-buttons-container .overlay-amount {
+  font-size: 1.6rem;
 }
 
 .posts-container {
@@ -1464,6 +1491,9 @@ html {
 }
 .contact-container .contact-success div p {
   font-size: 1.6rem;
+}
+.contact-container .show-success {
+  display: fixed;
 }
 
 .contact-info {

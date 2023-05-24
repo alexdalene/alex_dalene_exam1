@@ -118,6 +118,8 @@ function backBtn() {
 function getImages() {
   const images = document.querySelectorAll(".animal-img");
 
+  console.log(images);
+
   images.forEach((image) => {
     image.addEventListener("click", () => {
       const overlay = document.createElement("div");
@@ -125,6 +127,9 @@ function getImages() {
 
       const overlayBlur = document.createElement("div");
       overlayBlur.classList.add("overlay-blur");
+
+      const imagesContainer = document.createElement("div");
+      imagesContainer.classList.add("images-container");
 
       const overlayImage = document.createElement("img");
       overlayImage.classList.add("overlay-image");
@@ -134,15 +139,58 @@ function getImages() {
       overlayClose.classList.add("overlay-close");
       overlayClose.innerHTML = `<img src="/public/svg/close.svg" alt=""/>`;
 
+      const overlayButtonsContainer = document.createElement("div");
+      overlayButtonsContainer.classList.add("overlay-buttons-container");
+
+      const overlayNext = document.createElement("button");
+      overlayNext.classList.add("overlay-next");
+      overlayNext.innerHTML = `<img src="/public/svg/chevron.svg" alt=""/>`;
+
+      const overlayPrev = document.createElement("button");
+      overlayPrev.classList.add("overlay-prev");
+      overlayPrev.innerHTML = `<img src="/public/svg/chevron.svg" alt=""/>`;
+
+      const overlayAmount = document.createElement("p");
+      overlayAmount.classList.add("overlay-amount");
+      overlayAmount.innerHTML = `1 / ${images.length}`;
+
       // append elements to overlay
       overlay.appendChild(overlayBlur);
       overlay.appendChild(overlayClose);
       overlay.appendChild(overlayImage);
+      overlay.appendChild(overlayButtonsContainer);
+      overlayButtonsContainer.appendChild(overlayPrev);
+      overlayButtonsContainer.appendChild(overlayAmount);
+      overlayButtonsContainer.appendChild(overlayNext);
       document.body.appendChild(overlay);
 
       // close overlay
-      overlay.addEventListener("click", () => {
+      overlayClose.addEventListener("click", () => {
         overlay.remove();
+      });
+
+      let index = 0;
+
+      overlayNext.addEventListener("click", () => {
+        if (index >= images.length - 1) {
+          index = 0;
+        } else {
+          index++;
+        }
+
+        overlayAmount.innerHTML = `${index + 1} / ${images.length}`;
+        overlayImage.src = images[index].src;
+      });
+
+      overlayPrev.addEventListener("click", () => {
+        if (index === 0) {
+          index = images.length - 1;
+        } else {
+          index--;
+        }
+
+        overlayAmount.innerHTML = `${index + 1} / ${images.length}`;
+        overlayImage.src = images[index].src;
       });
 
       // set background iomage to same as image clicked

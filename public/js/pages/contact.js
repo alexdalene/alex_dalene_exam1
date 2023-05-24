@@ -72,55 +72,55 @@ form.addEventListener("keyup", () => {
   }
 });
 
+// hide success message before form is submitted
 document.querySelector(".contact-success").style.display = "none";
 
-// submit form to WordPress REST API, lots of help on this one
-$(document).ready(function () {
-  $(form).submit(function (e) {
-    e.preventDefault(); // prevent the form from submitting normally
+async function postFormData() {
+  // WordPress REST API authentication
+  let login = "wildatrisk.dalene.digital";
+  let password = "M8a7 t39g mOLY VioF 73h0 L2hc";
+  let authHeader = "Basic " + btoa(login + ":" + password);
 
-    // capture the form data
-    var formData = {
-      title: $(subject).val(),
-      content:
-        $(message).val() + "\n\n" + $(name).val() + "\n" + $(email).val(),
-      status: "publish",
-    };
+  // form data
+  const data = {
+    title: subject.value,
+    content: message.value + "\n\n" + name.value + "\n" + email.value,
+    status: "publish",
+  };
 
-    let login = "wildatrisk.dalene.digital";
-    let password = "M8a7 t39g mOLY VioF 73h0 L2hc";
-
-    let authHeader = "Basic " + btoa(login + ":" + password);
-
-    // send an AJAX request to the WordPress REST API with authentication
-    $.ajax({
+  // send an AJAX request to the WordPress REST API with authentication
+  const response = await fetch(
+    "https://wildatrisk.dalene.digital/wp-json/wp/v2/contact_form",
+    {
       method: "POST",
-      url: "https://wildatrisk.dalene.digital/wp-json/wp/v2/contact_form",
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader("Authorization", authHeader);
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: authHeader,
       },
-      data: JSON.stringify(formData),
-      contentType: "application/json",
-      success: function (data) {
-        console.log("Post created:", data);
+      body: JSON.stringify(data),
+    }
+  );
 
-        // reset the form
-        $(form).trigger("reset");
-        $(name).removeClass("valid");
-        $(email).removeClass("valid");
-        $(subject).removeClass("valid");
-        $(message).removeClass("valid");
-        submitBtn.disabled = true;
+  const result = await response.json();
+  console.log("Post created:", result);
 
-        // show success message
-        $(".contact-success").show();
-        setTimeout(function () {
-          $(".contact-success").fadeOut();
-        }, 5000);
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
-        console.error("Error creating post:", errorThrown);
-      },
-    });
-  });
+  // reset the form
+  form.reset();
+  name.classList.remove("valid");
+  email.classList.remove("valid");
+  subject.classList.remove("valid");
+  message.classList.remove("valid");
+  submitBtn.disabled = true;
+
+  // show success message
+  document.querySelector(".contact-success").style.display = "grid";
+  setTimeout(function () {
+    document.querySelector(".contact-success").style.display = "none";
+  }, 5000);
+}
+
+// submit form to WordPress REST API
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  postFormData();
 });
