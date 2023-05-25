@@ -1,9 +1,16 @@
 async function searchIndex() {
-  const response = await fetch(
-    "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal?_embed&per_page=100"
-  );
-  const result = await response.json();
-  searchPost(result);
+  try {
+    const response = await fetch(
+      "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal?_embed&per_page=100"
+    );
+
+    if (response.ok) {
+      const result = await response.json();
+      searchPost(result);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 searchIndex();

@@ -1,10 +1,17 @@
 async function getComments() {
-  const response = await fetch(
-    "https://wildatrisk.dalene.digital/wp-json/wp/v2/comments?post=" + postId
-  );
-  const result = await response.json();
-  makeComments(result);
-  commentForm();
+  try {
+    const response = await fetch(
+      "https://wildatrisk.dalene.digital/wp-json/wp/v2/comments?post=" + postId
+    );
+
+    if (response.ok) {
+      const result = await response.json();
+      makeComments(result);
+      commentForm();
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // show existing comments
@@ -145,6 +152,7 @@ async function postComment() {
   document.querySelector("#email").classList.remove("valid");
   document.querySelector(".comment-form-submit").disabled = true;
 
+  // make form data
   const data = {
     author_name: name,
     author_email: email,
@@ -152,21 +160,27 @@ async function postComment() {
     post: postId,
   };
 
-  const response = await fetch(
-    "https://wildatrisk.dalene.digital/wp-json/wp/v2/comments",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+  try {
+    const response = await fetch(
+      "https://wildatrisk.dalene.digital/wp-json/wp/v2/comments",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    if (response.ok) {
+      const result = await response.json();
+      console.log(result);
+
+      updateComment(result);
     }
-  );
-
-  const result = await response.json();
-  console.log(result);
-
-  updateComment(result);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // update comment section with new comment

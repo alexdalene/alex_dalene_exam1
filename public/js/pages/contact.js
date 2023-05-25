@@ -89,34 +89,40 @@ async function postFormData() {
   };
 
   // WordPress API authentication
-  const response = await fetch(
-    "https://wildatrisk.dalene.digital/wp-json/wp/v2/contact_form",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: authHeader,
-      },
-      body: JSON.stringify(data),
+  try {
+    const response = await fetch(
+      "https://wildatrisk.dalene.digital/wp-json/wp/v2/contact_form",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: authHeader,
+        },
+        body: JSON.stringify(data),
+      }
+    );
+
+    if (response.ok) {
+      const result = await response.json();
+      console.log("Post created:", result);
+
+      // reset the form
+      form.reset();
+      name.classList.remove("valid");
+      email.classList.remove("valid");
+      subject.classList.remove("valid");
+      message.classList.remove("valid");
+      submitBtn.disabled = true;
+
+      // show success message
+      document.querySelector(".contact-success").style.display = "grid";
+      setTimeout(function () {
+        document.querySelector(".contact-success").style.display = "none";
+      }, 5000);
     }
-  );
-
-  const result = await response.json();
-  console.log("Post created:", result);
-
-  // reset the form
-  form.reset();
-  name.classList.remove("valid");
-  email.classList.remove("valid");
-  subject.classList.remove("valid");
-  message.classList.remove("valid");
-  submitBtn.disabled = true;
-
-  // show success message
-  document.querySelector(".contact-success").style.display = "grid";
-  setTimeout(function () {
-    document.querySelector(".contact-success").style.display = "none";
-  }, 5000);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // submit form to WordPress REST API

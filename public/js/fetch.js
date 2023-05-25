@@ -1,10 +1,16 @@
 async function getPosts() {
-  const response = await fetch(
-    "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal?_embed&per_page=8"
-  );
-  const result = await response.json();
+  try {
+    const response = await fetch(
+      "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal?_embed&per_page=8"
+    );
 
-  makePost(result);
+    if (response.ok) {
+      const result = await response.json();
+      makePost(result);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 getPosts();

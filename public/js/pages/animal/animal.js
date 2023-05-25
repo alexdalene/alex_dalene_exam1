@@ -4,13 +4,20 @@ const params = new URLSearchParams(queryString);
 const postId = params.get("id");
 
 async function getAnimal() {
-  const response = await fetch(
-    "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal/" + postId
-  );
-  const result = await response.json();
-  makeAnimal(result);
-  backBtn();
-  getComments();
+  try {
+    const response = await fetch(
+      "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal/" + postId
+    );
+
+    if (response.ok) {
+      const result = await response.json();
+      makeAnimal(result);
+      backBtn();
+      getComments();
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 getAnimal();
