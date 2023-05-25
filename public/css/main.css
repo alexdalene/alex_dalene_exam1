@@ -1604,6 +1604,18 @@ html {
   font-style: italic;
 }
 
+.errorContainer {
+  display: flex;
+  width: 100%;
+  background-color: #ffb4ab;
+  padding: 1.6rem;
+  border-radius: 3rem;
+}
+.errorContainer h3 {
+  font-size: 1.6rem;
+  color: #690005;
+}
+
 .about-container {
   display: flex;
   flex-direction: column;

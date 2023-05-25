@@ -102,6 +102,7 @@ async function postFormData() {
       }
     );
 
+    // check if response is good
     if (response.ok) {
       const result = await response.json();
       console.log("Post created:", result);
@@ -119,6 +120,32 @@ async function postFormData() {
       setTimeout(function () {
         document.querySelector(".contact-success").style.display = "none";
       }, 5000);
+    } else {
+      // make error container and message
+      const errorContainer = document.createElement("div");
+      errorContainer.classList.add("errorContainer");
+      const errorMessage = document.createElement("h3");
+      errorContainer.append(errorMessage);
+
+      // error message template
+      const ERROR_TO_DISPLAY = {
+        code: response.status,
+        status: response.statusText ? response.statusText : "NO MESSAGE FOUND",
+        message:
+          "Please refresh and try again, or contact administration if problems persists.",
+      };
+
+      // check errors
+      if (response.status === 401) {
+        errorMessage.innerHTML = `Unauthorized access. Code: ${ERROR_TO_DISPLAY.code} with message: ${ERROR_TO_DISPLAY.status}. ${ERROR_TO_DISPLAY.message}`;
+      } else if (response.status === 403) {
+        errorMessage.innerHTML = `Forbidden access. Code: ${ERROR_TO_DISPLAY.code} with message: ${ERROR_TO_DISPLAY.status}. ${ERROR_TO_DISPLAY.message}`;
+      } else {
+        errorMessage.innerHTML = `An error has occured. Code: ${ERROR_TO_DISPLAY.code} with message: ${ERROR_TO_DISPLAY.status}. ${ERROR_TO_DISPLAY.message}`;
+      }
+
+      // append the message to frontend
+      form.append(errorContainer);
     }
   } catch (error) {
     console.log(error);

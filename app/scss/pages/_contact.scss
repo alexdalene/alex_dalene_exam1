@@ -191,3 +191,16 @@
         }
     }
 }
+
+.errorContainer {
+    display: flex;
+    width: 100%;
+    background-color: a.$md-sys-color-error-dark;
+    padding: 1.6rem;
+    border-radius: a.$md-sys-radius-defalt;
+
+    h3 {
+        font-size: 1.6rem;
+        color: a.$md-sys-color-on-error-dark;
+    }
+}
