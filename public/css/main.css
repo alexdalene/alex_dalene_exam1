@@ -1056,20 +1056,27 @@ html {
   font-size: 1.6rem;
   font-weight: 400;
 }
-.animal-container .animal-wrapper .comment-container .comment-form {
+
+.comment-form {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+  max-width: 586px;
 }
-.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container {
+.comment-form .comment-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  font-family: "Quicksand";
+}
+.comment-form .comment-form-container {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 }
-.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container label {
+.comment-form .comment-form-container label {
   display: none;
 }
-.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container input, .animal-container .animal-wrapper .comment-container .comment-form .comment-form-container textarea {
+.comment-form .comment-form-container input, .comment-form .comment-form-container textarea {
   font-size: 1.6rem;
   outline: none;
   border: none;
@@ -1083,24 +1090,24 @@ html {
   width: 100%;
   border-radius: 0px;
 }
-.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container input::placeholder, .animal-container .animal-wrapper .comment-container .comment-form .comment-form-container textarea::placeholder {
+.comment-form .comment-form-container input::placeholder, .comment-form .comment-form-container textarea::placeholder {
   color: #cdc6b4;
   font-weight: 400;
 }
-.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container input:is(:focus, :hover, :focus-visible), .animal-container .animal-wrapper .comment-container .comment-form .comment-form-container textarea:is(:focus, :hover, :focus-visible) {
+.comment-form .comment-form-container input:is(:focus, :hover, :focus-visible), .comment-form .comment-form-container textarea:is(:focus, :hover, :focus-visible) {
   background-color: #33312a;
 }
-.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container textarea {
+.comment-form .comment-form-container textarea {
   height: 12rem;
-  min-width: 100%;
+  width: 100%;
 }
-.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container .valid {
+.comment-form .comment-form-container .valid {
   border-bottom: 2px solid #e8c41c;
 }
-.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container .invalid {
+.comment-form .comment-form-container .invalid {
   border-bottom: 2px solid #ffb4ab;
 }
-.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container .comment-form-submit {
+.comment-form .comment-form-container .comment-form-submit {
   background-color: #e8c41c;
   color: #3a3000;
   padding: 1.2rem 1.6rem;
@@ -1113,7 +1120,7 @@ html {
   align-self: flex-end;
   transition: background-color 200ms ease-in-out;
 }
-.animal-container .animal-wrapper .comment-container .comment-form .comment-form-container .comment-form-submit:disabled {
+.comment-form .comment-form-container .comment-form-submit:disabled {
   background-color: #544600;
   cursor: not-allowed;
 }

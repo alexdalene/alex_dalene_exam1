@@ -308,80 +308,85 @@
                     font-weight: 400;
                 }
             }
+        }
+    }
+}
 
-            .comment-form {
-                display: flex;
-                flex-direction: column;
-                gap: 1.6rem;
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    max-width: 586px;
 
-                .comment-form-container {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.8rem;
+    .comment-title {
+        font-size: 2.4rem;
+        font-weight: 400;
+        font-family: a.$md-sys-font-quicksand;
+    }
 
-                    label {
-                        display: none;
-                    }
+    .comment-form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
 
-                    input, textarea {
-                        font-size: 1.6rem;
-                        outline: none;
-                        border: none;
-                        background-color: a.$md-sys-color-surface-container-high;
-                        border-bottom: 1px solid a.$md-sys-color-outline-dark;
-                        font-weight: 400;
-                        padding: 0.8rem;
-                        font-family: a.$md-sys-font-quicksand;
-                        color: a.$md-sys-color-on-surface-dark;
-                        transition: border-bottom 0.2s ease-in-out;
-                        width: 100%;
-                        border-radius: 0px;
+        label {
+            display: none;
+        }
 
-            
-                        &::placeholder {
-                            color: a.$md-sys-color-on-surface-variant-dark;
-                            font-weight: 400;
-                        }
-            
-                        &:is(:focus, :hover, :focus-visible) {
-                            background-color: adjust-color($color: a.$md-sys-color-surface-container-high, $hue: 0, $saturation: 0%, $lightness: 2.5%, $alpha: 1.0);
-                        }
-                    }
+        input, textarea {
+            font-size: 1.6rem;
+            outline: none;
+            border: none;
+            background-color: a.$md-sys-color-surface-container-high;
+            border-bottom: 1px solid a.$md-sys-color-outline-dark;
+            font-weight: 400;
+            padding: 0.8rem;
+            font-family: a.$md-sys-font-quicksand;
+            color: a.$md-sys-color-on-surface-dark;
+            transition: border-bottom 0.2s ease-in-out;
+            width: 100%;
+            border-radius: 0px;
 
-                    textarea {
-                        height: 12rem;
-                        min-width: 100%;
-                    }
 
-                    .valid {
-                        border-bottom: 2px solid a.$md-sys-color-primary-dark;
-                    }
-            
-                    .invalid {
-                        border-bottom: 2px solid a.$md-sys-color-error-dark;
-                    }
+            &::placeholder {
+                color: a.$md-sys-color-on-surface-variant-dark;
+                font-weight: 400;
+            }
 
-                    .comment-form-submit {
-                        background-color: a.$md-sys-color-primary-dark;
-                        color: a.$md-sys-color-on-primary-dark;
-                        padding: 1.2rem 1.6rem;
-                        border-radius: a.$md-sys-radius-defalt;
-                        cursor: pointer;
-                        outline: none;
-                        border: none;
-                        font-size: 1.6rem;
-                        width: 15rem;
-                        align-self: flex-end;
-                        transition: background-color 200ms ease-in-out;
+            &:is(:focus, :hover, :focus-visible) {
+                background-color: adjust-color($color: a.$md-sys-color-surface-container-high, $hue: 0, $saturation: 0%, $lightness: 2.5%, $alpha: 1.0);
+            }
+        }
 
-                        &:disabled {
-                            background-color: a.$md-sys-color-primary-container-dark;
-                            cursor: not-allowed;
-                        }
-                    }
-                }
+        textarea {
+            height: 12rem;
+            width: 100%;
+        }
 
-                // finish styling
+        .valid {
+            border-bottom: 2px solid a.$md-sys-color-primary-dark;
+        }
+
+        .invalid {
+            border-bottom: 2px solid a.$md-sys-color-error-dark;
+        }
+
+        .comment-form-submit {
+            background-color: a.$md-sys-color-primary-dark;
+            color: a.$md-sys-color-on-primary-dark;
+            padding: 1.2rem 1.6rem;
+            border-radius: a.$md-sys-radius-defalt;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            font-size: 1.6rem;
+            width: 15rem;
+            align-self: flex-end;
+            transition: background-color 200ms ease-in-out;
+
+            &:disabled {
+                background-color: a.$md-sys-color-primary-container-dark;
+                cursor: not-allowed;
             }
         }
     }

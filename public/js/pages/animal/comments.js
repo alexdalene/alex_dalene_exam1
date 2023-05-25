@@ -4,6 +4,7 @@ async function getComments() {
   );
   const result = await response.json();
   makeComments(result);
+  commentForm();
 }
 
 // show existing comments
@@ -40,8 +41,6 @@ function makeComments(comments) {
           <p class="no-comments">No comments yet. Be the first to comment!</p>
           `;
   }
-
-  commentForm();
 }
 
 // create comment form
@@ -68,7 +67,7 @@ function commentForm() {
       </div>
       `;
 
-  document.querySelector(".comment-container").appendChild(commentForm);
+  document.querySelector(".animal-wrapper").appendChild(commentForm);
 
   // comment validation
   const comment = document.querySelector("#comment");
@@ -139,6 +138,13 @@ async function postComment() {
   const name = document.querySelector("#name").value;
   const email = document.querySelector("#email").value;
 
+  // reset form
+  document.querySelector(".comment-form").reset();
+  document.querySelector("#comment").classList.remove("valid");
+  document.querySelector("#name").classList.remove("valid");
+  document.querySelector("#email").classList.remove("valid");
+  document.querySelector(".comment-form-submit").disabled = true;
+
   const data = {
     author_name: name,
     author_email: email,
@@ -160,6 +166,34 @@ async function postComment() {
   const result = await response.json();
   console.log(result);
 
-  // reload page to show new comment
-  location.reload();
+  updateComment(result);
+}
+
+// update comment section with new comment
+function updateComment(comment) {
+  const commentContainer = document.querySelector(".comment-container");
+
+  if (commentContainer.querySelector(".no-comments")) {
+    commentContainer.querySelector(".no-comments").remove();
+  }
+
+  // make date a readable format
+  let date = new Date(comment.date).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  commentContainer.innerHTML += `
+      <div class="comment">
+        <div class="comment-header">
+          <div class="comment-avatar">
+            <img src="${comment.author_avatar_urls[48]}" alt="" />
+          </div>
+          <h3 class="comment-name">${comment.author_name}</h3>
+          <p class="comment-date">${date}</p>
+        </div>
+          ${comment.content.rendered}
+      </div>
+      `;
 }
