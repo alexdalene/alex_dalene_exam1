@@ -70,7 +70,10 @@ function commentForm() {
           <label for="email">Email</label>
           <input type="email" name="email" id="email" placeholder="Email" required />
         </div>
+        <div class="submit-container">
+        <span class="loader"></span>
         <button type="submit" class="comment-form-submit" disabled="true" >Submit</button>
+        </div>
       </div>
       `;
 
@@ -161,6 +164,7 @@ async function postComment() {
   };
 
   try {
+    document.querySelector(".loader").style.display = "block";
     const response = await fetch(
       "https://wildatrisk.dalene.digital/wp-json/wp/v2/comments",
       {
@@ -173,6 +177,7 @@ async function postComment() {
     );
 
     if (response.ok) {
+      document.querySelector(".loader").style.display = "none";
       const result = await response.json();
       console.log(result);
 

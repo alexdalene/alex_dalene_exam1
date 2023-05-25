@@ -1,5 +1,5 @@
 const form = document.querySelector(".contact-form");
-const name = document.querySelector("#name");
+const userName = document.querySelector("#name");
 const email = document.querySelector("#email");
 const subject = document.querySelector("#subject");
 const message = document.querySelector("#message");
@@ -15,13 +15,13 @@ const subjectRegex = /^[a-zA-Z ]{16,}$/;
 const messageRegex = /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/? ]{26,}$/;
 
 // name validation
-name.addEventListener("keyup", () => {
-  if (nameRegex.test(name.value)) {
-    name.classList.add("valid");
-    name.classList.remove("invalid");
+userName.addEventListener("keyup", () => {
+  if (nameRegex.test(userName.value)) {
+    userName.classList.add("valid");
+    userName.classList.remove("invalid");
   } else {
-    name.classList.add("invalid");
-    name.classList.remove("valid");
+    userName.classList.add("invalid");
+    userName.classList.remove("valid");
   }
 });
 
@@ -61,7 +61,7 @@ message.addEventListener("keyup", () => {
 // remove disabled from button if all fields are valid
 form.addEventListener("keyup", () => {
   if (
-    name.classList.contains("valid") &&
+    userName.classList.contains("valid") &&
     email.classList.contains("valid") &&
     subject.classList.contains("valid") &&
     message.classList.contains("valid")
@@ -84,12 +84,15 @@ async function postFormData() {
   // form data
   const data = {
     title: subject.value,
-    content: message.value + "\n\n" + name.value + "\n" + email.value,
+    content: message.value + "\n\n" + userName.value + "\n" + email.value,
     status: "publish",
   };
 
   // WordPress API authentication
   try {
+    // start loader
+    document.querySelector(".loader").style.display = "block";
+
     const response = await fetch(
       "https://wildatrisk.dalene.digital/wp-json/wp/v2/contact_form",
       {
@@ -104,12 +107,15 @@ async function postFormData() {
 
     // check if response is good
     if (response.ok) {
+      // stop loader
+      document.querySelector(".loader").style.display = "none";
+
       const result = await response.json();
       console.log("Post created:", result);
 
       // reset the form
       form.reset();
-      name.classList.remove("valid");
+      userName.classList.remove("valid");
       email.classList.remove("valid");
       subject.classList.remove("valid");
       message.classList.remove("valid");

@@ -131,15 +131,28 @@
         }
 
         .valid {
-            border-bottom: 1px solid a.$md-sys-color-primary-dark;
+            border-bottom: 2px solid a.$md-sys-color-primary-dark;
         }
 
         .invalid {
-            border-bottom: 1px solid a.$md-sys-color-error-dark;
+            border-bottom: 2px solid a.$md-sys-color-error-dark;
         }
 
         textarea {
             height: 12rem;
+        }
+
+        .submit-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .loader {
+                font-size: 0.4rem;
+                margin: 0;
+                margin-right: 3.6rem;
+                display: none;
+            }
         }
 
         .contact-button {
