@@ -101,6 +101,8 @@ function loadMore(post) {
         break;
       }
     }
+
+    // update button
     loadMoreBtn.textContent = "No more animals :(";
     loadMoreBtn.disabled = true;
     loadMoreBtn.style.cursor = "default";
@@ -137,6 +139,7 @@ function sortPosts() {
     }
   });
 
+  // update sort button
   if (sortBtn.textContent === "Sort by: Z-A") {
     sortBtn.textContent = "Sort by: A-Z";
     postsArray.reverse();
@@ -178,5 +181,3 @@ searchInput.addEventListener("keyup", () => {
     loadMoreBtn.style.display = "block";
   }
 });
-
-// hide load more button if there are no more posts to show

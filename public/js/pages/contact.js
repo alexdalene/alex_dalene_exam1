@@ -88,7 +88,7 @@ async function postFormData() {
     status: "publish",
   };
 
-  // send an AJAX request to the WordPress REST API with authentication
+  // WordPress API authentication
   const response = await fetch(
     "https://wildatrisk.dalene.digital/wp-json/wp/v2/contact_form",
     {

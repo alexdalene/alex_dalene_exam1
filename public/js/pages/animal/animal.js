@@ -103,6 +103,7 @@ function makeAnimal(animal) {
   getImages();
 }
 
+// dynamic back button
 function backBtn() {
   const backBtn = document.querySelector(".back-button");
   window.addEventListener("scroll", () => {
@@ -122,6 +123,7 @@ function getImages() {
 
   images.forEach((image) => {
     image.addEventListener("click", () => {
+      // create overlay and children
       const overlay = document.createElement("div");
       overlay.classList.add("overlay");
 
@@ -169,8 +171,10 @@ function getImages() {
         overlay.remove();
       });
 
+      // index used for carousel
       let index = 0;
 
+      // replace src of image with next in array
       overlayNext.addEventListener("click", () => {
         if (index >= images.length - 1) {
           index = 0;
@@ -182,6 +186,7 @@ function getImages() {
         overlayImage.src = images[index].src;
       });
 
+      // replace src of image with previous in array
       overlayPrev.addEventListener("click", () => {
         if (index === 0) {
           index = images.length - 1;
