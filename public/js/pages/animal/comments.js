@@ -1,7 +1,8 @@
 async function getComments() {
   try {
     const response = await fetch(
-      "https://wildatrisk.dalene.digital/wp-json/wp/v2/comments?post=" + postId
+      "https://wordpress-722208-3560103.cloudwaysapps.com/wp-json/wp/v2/comments?post=" +
+        postId
     );
 
     if (response.ok) {
@@ -166,7 +167,7 @@ async function postComment() {
   try {
     document.querySelector(".loader").style.display = "block";
     const response = await fetch(
-      "https://wildatrisk.dalene.digital/wp-json/wp/v2/comments",
+      "https://wordpress-722208-3560103.cloudwaysapps.com/wp-json/wp/v2/comments",
       {
         method: "POST",
         headers: {
@@ -179,9 +180,34 @@ async function postComment() {
     if (response.ok) {
       document.querySelector(".loader").style.display = "none";
       const result = await response.json();
-      console.log(result);
-
       updateComment(result);
+    } else {
+      document.querySelector(".loader").style.display = "none";
+      // make error container and message
+      const errorContainer = document.createElement("div");
+      errorContainer.classList.add("errorContainer");
+      const errorMessage = document.createElement("h3");
+      errorContainer.append(errorMessage);
+
+      // error message template
+      const ERROR_TO_DISPLAY = {
+        code: response.status,
+        status: response.statusText ? response.statusText : "NO MESSAGE FOUND",
+        message:
+          "Please refresh and try again, or contact administration if problems persists.",
+      };
+
+      // check errors
+      if (response.status === 401) {
+        errorMessage.innerHTML = `Unauthorized access. Code: ${ERROR_TO_DISPLAY.code} with message: ${ERROR_TO_DISPLAY.status}. ${ERROR_TO_DISPLAY.message}`;
+      } else if (response.status === 403) {
+        errorMessage.innerHTML = `Forbidden access. Code: ${ERROR_TO_DISPLAY.code} with message: ${ERROR_TO_DISPLAY.status}. ${ERROR_TO_DISPLAY.message}`;
+      } else {
+        errorMessage.innerHTML = `An error has occured. Code: ${ERROR_TO_DISPLAY.code} with message: ${ERROR_TO_DISPLAY.status}. ${ERROR_TO_DISPLAY.message}`;
+      }
+
+      // append the message to frontend
+      document.querySelector(".comment-form").append(errorContainer);
     }
   } catch (error) {
     console.log(error);

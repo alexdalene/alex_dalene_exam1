@@ -1,12 +1,14 @@
 async function getPosts() {
+  document.querySelector(".loader").style.display = "block";
   try {
     const response = await fetch(
-      "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal?_embed&per_page=8"
+      "https://wordpress-722208-3560103.cloudwaysapps.com/wp-json/wp/v2/animal"
     );
 
     if (response.ok) {
       const result = await response.json();
       makePost(result);
+      document.querySelector(".loader").style.display = "none";
     }
   } catch (error) {
     console.log(error);
@@ -17,36 +19,35 @@ getPosts();
 
 function makePost(post) {
   const postContainer = document.querySelector(".carousel-container");
-  console.log(post);
 
   const sortedPosts = post.sort((a, b) => {
     return new Date(b.acf.date) - new Date(a.acf.date);
   });
 
-  sortedPosts.forEach((post) => {
+  for (let i = 0; i <= 7; i++) {
     postContainer.innerHTML += `
     <li class="carousel">
-      <a href="/public/pages/animal.html?id=${post.id}">
+      <a href="/public/pages/animal.html?id=${sortedPosts[i].id}">
         <article class="post-wrapper">
           <img
-            src="${post.acf.url}"
-            alt="${post.acf.alt}"
+            src="${sortedPosts[i].acf.url}"
+            alt="${sortedPosts[i].acf.alt}"
             class="post-img"
           />
           <section class="post-container">
-            <h3 class="post-title">${post.acf.header}</h3>
-            <p class="post-status">${post.acf.status}</p>
+            <h3 class="post-title">${sortedPosts[i].acf.header}</h3>
+            <p class="post-status">${sortedPosts[i].acf.status}</p>
             <p class="post-paragraph">
-              ${post.acf.paragraph1}
+              ${sortedPosts[i].acf.paragraph1}
             </p>
           </section>
           <footer class="post-footer">
-            <p>${post.acf.author}</p>
-            <p>${post.acf.date}</p>
+            <p>${sortedPosts[i].acf.author}</p>
+            <p>${sortedPosts[i].acf.date}</p>
           </footer>
         </article>
       </a>
     </li>
     `;
-  });
+  }
 }

@@ -78,7 +78,7 @@ document.querySelector(".contact-success").style.display = "none";
 async function postFormData() {
   // WordPress REST API authentication
   let login = "wildatrisk.dalene.digital";
-  let password = "M8a7 t39g mOLY VioF 73h0 L2hc";
+  let password = "OPGt NtV7 7xqj C1Wu LrGG hx51";
   let authHeader = "Basic " + btoa(login + ":" + password);
 
   // form data
@@ -94,7 +94,7 @@ async function postFormData() {
     document.querySelector(".loader").style.display = "block";
 
     const response = await fetch(
-      "https://wildatrisk.dalene.digital/wp-json/wp/v2/contact_form",
+      "https://wordpress-722208-3560103.cloudwaysapps.com/wp-json/wp/v2/contact_form",
       {
         method: "POST",
         headers: {

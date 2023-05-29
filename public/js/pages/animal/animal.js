@@ -4,9 +4,12 @@ const params = new URLSearchParams(queryString);
 const postId = params.get("id");
 
 async function getAnimal() {
+  document.querySelector(".loader1").style.display = "block";
+
   try {
     const response = await fetch(
-      "https://wildatrisk.dalene.digital/wp-json/wp/v2/animal/" + postId
+      "https://wordpress-722208-3560103.cloudwaysapps.com/wp-json/wp/v2/animal/" +
+        postId
     );
 
     if (response.ok) {
@@ -14,6 +17,7 @@ async function getAnimal() {
       makeAnimal(result);
       backBtn();
       getComments();
+      document.querySelector(".loader1").style.display = "none";
     }
   } catch (error) {
     console.log(error);
@@ -125,8 +129,6 @@ function backBtn() {
 // click on image to open modal
 function getImages() {
   const images = document.querySelectorAll(".animal-img");
-
-  console.log(images);
 
   images.forEach((image) => {
     image.addEventListener("click", () => {
