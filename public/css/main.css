@@ -801,6 +801,7 @@ html {
   flex-direction: column;
   align-items: center;
   margin-inline: 1.6rem;
+  margin-top: 1.6rem;
 }
 @media (min-width: 600px) {
   .animal-container {

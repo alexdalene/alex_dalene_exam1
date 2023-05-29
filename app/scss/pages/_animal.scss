@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     margin-inline: a.$md-sys-margin-default;
+    margin-top: 1.6rem;
 
     @include a.respond-to('small') {
         margin-inline: a.$md-sys-margin-small;
