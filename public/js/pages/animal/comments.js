@@ -1,7 +1,7 @@
 async function getComments() {
   try {
     const response = await fetch(
-      "https://wordpress-722208-3560103.cloudwaysapps.com/wp-json/wp/v2/comments?post=" +
+      "https://wordpress-1011658-3574829.cloudwaysapps.com/wp-json/wp/v2/comments?post=" +
         postId
     );
 
@@ -167,7 +167,7 @@ async function postComment() {
   try {
     document.querySelector(".loader").style.display = "block";
     const response = await fetch(
-      "https://wordpress-722208-3560103.cloudwaysapps.com/wp-json/wp/v2/comments",
+      "https://wordpress-1011658-3574829.cloudwaysapps.com/wp-json/wp/v2/comments",
       {
         method: "POST",
         headers: {

@@ -8,7 +8,7 @@ async function getAnimal() {
 
   try {
     const response = await fetch(
-      "https://wordpress-722208-3560103.cloudwaysapps.com/wp-json/wp/v2/animal/" +
+      "https://wordpress-1011658-3574829.cloudwaysapps.com/wp-json/wp/v2/animal/" +
         postId
     );
 

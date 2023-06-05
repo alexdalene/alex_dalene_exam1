@@ -94,7 +94,7 @@ async function postFormData() {
     document.querySelector(".loader").style.display = "block";
 
     const response = await fetch(
-      "https://wordpress-722208-3560103.cloudwaysapps.com/wp-json/wp/v2/contact_form",
+      "https://wordpress-1011658-3574829.cloudwaysapps.com/wp-json/wp/v2/contact_form",
       {
         method: "POST",
         headers: {
